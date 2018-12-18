@@ -60,3 +60,27 @@ within the spec_helper RSpec configure:
         resource '*', headers: :any, methods: [:get, :post, :options]
       end
     end` for the rack-cors gem
+    
+## Introduction
+  This app provides the api endpoints for the Mentor Match Project.
+  View the final project here:
+
+## Initial Setup
+
+## How to Use
+
+  This project provides the following endpoints:
+
+## Known Issues
+
+## Running Tests
+
+## How to Contribute
+
+## Core Contributors
+
+## Schema Design
+
+## Tech Stack List
+* Ruby 2.4.1
+* Ruby on Rails 5.1
