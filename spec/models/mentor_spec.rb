@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Mentor, type: :model do
+  describe 'validations' do
+    it {should validate_presence_of(:email)}
+    it {should validate_uniqueness_of(:email)}
+  end
   it 'exists' do
     mentor = Mentor.new()
     expect(mentor).to be_a(Mentor)
@@ -14,7 +18,6 @@ RSpec.describe Mentor, type: :model do
     linkedin_username = "brandi@linked_in.com"
     github_username = "brandi@github.com"
     matched = false
-    user_id = 2
 
     attributes = {
       "name" => "Brandi",
@@ -24,8 +27,7 @@ RSpec.describe Mentor, type: :model do
       "slack_username" => "brandi@slack.com",
       "linkedin_username" => "brandi@linked_in.com",
       "github_username" => "brandi@github.com",
-      "matched" => false,
-      "user_id" => 2
+      "matched" => false
     }
 
     mentor = Mentor.new(attributes)
@@ -38,6 +40,32 @@ RSpec.describe Mentor, type: :model do
     expect(mentor.linkedin_username).to eq(linkedin_username)
     expect(mentor.github_username).to eq(github_username)
     expect(mentor.matched).to eq(matched)
-    expect(mentor.user_id).to eq(user_id)
   end
+
+  # it 'cannot have a duplicate email' do
+  #     attributes_user_1 = {
+  #       "name" => "Brandi",
+  #       "email" => "b@gmail.com",
+  #       "city" => "Denver",
+  #       "state" => "CO",
+  #       "slack_username" => "brandi@slack.com",
+  #       "linkedin_username" => "brandi@linked_in.com",
+  #       "github_username" => "brandi@github.com",
+  #       "matched" => false
+  #     }
+  #
+  #     attributes_user_2 = {
+  #       "name" => "Susan",
+  #       "email" => "b@gmail.com",
+  #       "city" => "Denver",
+  #       "state" => "CO",
+  #       "slack_username" => "brandi@slack.com",
+  #       "linkedin_username" => "brandi@linked_in.com",
+  #       "github_username" => "brandi@github.com",
+  #       "matched" => false
+  #     }
+  #
+  #     mentor_1 = Mentor.create(attributes_user_1)
+  #     mentor_2 = Mentor.create(attributes_user_2)
+  # end
 end
