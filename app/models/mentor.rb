@@ -7,5 +7,5 @@ class Mentor < ApplicationRecord
                         :github_username,
                         :matched
 
-  validates :email, uniqueness: true
+  validates :email, uniqueness: true, presence: true
 end
