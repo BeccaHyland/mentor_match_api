@@ -1,4 +1,4 @@
-class MentorsController < ApplicationController
+class API::V1::Admin::MentorsController < ApplicationController
 
   def create
 

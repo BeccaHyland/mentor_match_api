@@ -1,4 +1,4 @@
-class MentorsController < ApplicationController
+class Api::V1::MentorsController < ApplicationController
 
   def index
 
