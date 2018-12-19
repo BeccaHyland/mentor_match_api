@@ -4,6 +4,15 @@ RSpec.describe Mentor, type: :model do
   describe 'validations' do
     it {should validate_presence_of(:email)}
     it {should validate_uniqueness_of(:email)}
+    it {should validate_presence_of(:name)}
+    it {should validate_presence_of(:city)}
+    it {should validate_presence_of(:state)}
+    it {should validate_presence_of(:slack_username)}
+    it {should validate_presence_of(:linkedin_username)}
+    it {should validate_presence_of(:github_username)}
+    it {should validate_presence_of(:program)}
+    it {should validate_inclusion_of(:active).in_array [true, false]}
+    it {should validate_inclusion_of(:matched).in_array [true, false]}
   end
   it 'exists' do
     mentor = Mentor.new()
