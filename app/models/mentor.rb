@@ -5,7 +5,10 @@ class Mentor < ApplicationRecord
                         :slack_username,
                         :linkedin_username,
                         :github_username,
-                        :matched
+                        :program
+
+  validates_inclusion_of :matched, in: [true, false]
+  validates_inclusion_of :active, in: [true, false]
 
   validates :email, uniqueness: true, presence: true
 end
