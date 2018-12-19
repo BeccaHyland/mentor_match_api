@@ -16,6 +16,8 @@ describe 'mentors API' do
       expect(get_response[:data]).to be_an(Array)
       expect(get_response[:data].length).to eq(3)
       expect(get_response[:data].first[:attributes][:name]).to eq(mentor_1[:name])
+      expect(get_response[:data].second[:attributes][:name]).to eq(mentor_2[:name])
+      expect(get_response[:data].third[:attributes][:name]).to eq(mentor_3[:name])
 
     end
   end
