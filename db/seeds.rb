@@ -17,7 +17,10 @@ if Rails.env == 'development' || Rails.env == 'production'
     slack_username: "mb@slack.com",
     linkedin_username: "mb@linked_in.com",
     github_username: "mb@github.com",
-    matched: true },
+    matched: true,
+    active: true,
+    program: "BE"
+    },
 
     {
     name: "Paul Hollywood",
@@ -27,7 +30,9 @@ if Rails.env == 'development' || Rails.env == 'production'
     slack_username: "ph@slack.com",
     linkedin_username: "ph@linked_in.com",
     github_username: "ph@github.com",
-    matched: true
+    matched: true,
+    active: true,
+    program: "BE"
     },
     {
     name: "Susan Mel",
@@ -37,6 +42,8 @@ if Rails.env == 'development' || Rails.env == 'production'
     slack_username: "sm@slack.com",
     linkedin_username: "sm@linked_in.com",
     github_username: "sm@github.com",
-    matched: true
+    matched: true,
+    active: true,
+    program: "BE"
     }])
 end
