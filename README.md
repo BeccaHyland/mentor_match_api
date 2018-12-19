@@ -8,7 +8,9 @@
 initial build command: `rails new mentor_match_api -T -d postgresql --skip-spring --skip-turbolinks`
 
 Gems added:
+
 general: 
+
 gem 'fast_jsonapi'
 gem 'rack-cors', require 'rack/cors'
 gem 'active-designer'
@@ -22,6 +24,7 @@ development & test
   gem 'launchy'
   gem 'database_cleaner'
   gem 'faker'
+
   
   test only
   gem 'simplecov'
@@ -29,6 +32,7 @@ development & test
  Run `rails g rspec:install`
  
  To rails_helper, added 
+
  `Shoulda::Matchers.configure do |config|
   config.integrate do |with|
     with.test_framework :rspec
@@ -52,7 +56,7 @@ within the spec_helper RSpec configure:
         example.run
       end
     end`
-    
+
   in config/application.rb, added:
   `config.middleware.insert_before 0, Rack::Cors do
       allow do
@@ -60,7 +64,7 @@ within the spec_helper RSpec configure:
         resource '*', headers: :any, methods: [:get, :post, :options]
       end
     end` for the rack-cors gem
-    
+
 ## Introduction
   This app provides the api endpoints for the Mentor Match Project.
   View the final project here:
