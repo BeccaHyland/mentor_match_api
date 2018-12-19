@@ -8,7 +8,9 @@
 initial build command: `rails new mentor_match_api -T -d postgresql --skip-spring --skip-turbolinks`
 
 Gems added:
-general:
+
+general: 
+
 gem 'fast_jsonapi'
 gem 'rack-cors', require 'rack/cors'
 gem 'active-designer'
@@ -23,12 +25,14 @@ development & test
   gem 'database_cleaner'
   gem 'faker'
 
+  
   test only
   gem 'simplecov'
-
+ 
  Run `rails g rspec:install`
+ 
+ To rails_helper, added 
 
- To rails_helper, added
  `Shoulda::Matchers.configure do |config|
   config.integrate do |with|
     with.test_framework :rspec
