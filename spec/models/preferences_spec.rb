@@ -19,4 +19,8 @@ RSpec.describe Preference, type: :model do
 
     expect(preference.title).to eq(title)
   end
+  describe 'relationships' do
+    it {should have_many(:mentors)}
+    it {should have_many(:mentor_preferences)}
+  end
 end
