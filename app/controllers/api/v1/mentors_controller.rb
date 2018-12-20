@@ -4,6 +4,8 @@ class Api::V1::MentorsController < ApplicationController
     mentor = Mentor.new(mentor_params)
     if mentor.save
       render json: MentorSerializer.new(mentor)
+    else
+      render json: {}, status: 401
     end
   end
 
@@ -13,12 +15,18 @@ class Api::V1::MentorsController < ApplicationController
 
   def show
     id = params[:id]
-    render json: MentorSerializer.new(Mentor.find_by_id(id))
+    render json: MentorSerializer.new(Mentor.find(id))
   end
 
   def update
     id = params[:id]
-    Mentor.find_by_id(id).update(mentor_params)
+    Mentor.find(id).update(mentor_params)
+    render json: MentorSerializer.new(Mentor.find(id))
+  end
+
+  def destroy
+    id = params[:id]
+    Mentor.find(id).delete
   end
 
   private
