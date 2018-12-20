@@ -26,5 +26,19 @@ describe 'mentors API' do
       expect(mentor.name).to eq(payload[:name])
 
     end
+    it 'does not post successfully with missing attributes' do
+      payload = {
+        name: "Atreyu",
+        email: "never_ending@gmail.com",
+        active: true
+      }
+
+      post '/api/v1/mentors', params: {mentor: payload}
+
+      mentor = Mentor.last
+
+      # expect(response).to be_unsuccessful
+      # expect(response.status).to eq(400)
+    end
   end
 end

@@ -4,8 +4,6 @@ class Api::V1::MentorsController < ApplicationController
     mentor = Mentor.new(mentor_params)
     if mentor.save
       render json: MentorSerializer.new(mentor)
-    else
-      render response.status(400)
     end
   end
 
