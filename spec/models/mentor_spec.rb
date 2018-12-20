@@ -4,6 +4,15 @@ RSpec.describe Mentor, type: :model do
   describe 'validations' do
     it {should validate_presence_of(:email)}
     it {should validate_uniqueness_of(:email)}
+    it {should validate_presence_of(:name)}
+    it {should validate_presence_of(:city)}
+    it {should validate_presence_of(:state)}
+    it {should validate_presence_of(:slack_username)}
+    it {should validate_presence_of(:linkedin_username)}
+    it {should validate_presence_of(:github_username)}
+    it {should validate_presence_of(:program)}
+    it {should validate_inclusion_of(:active).in_array [true, false]}
+    it {should validate_inclusion_of(:matched).in_array [true, false]}
   end
   it 'exists' do
     mentor = Mentor.new()
@@ -17,7 +26,10 @@ RSpec.describe Mentor, type: :model do
     slack_username = "brandi@slack.com"
     linkedin_username = "brandi@linked_in.com"
     github_username = "brandi@github.com"
+    program = "BE"
     matched = false
+    active = true
+
 
     attributes = {
       "name" => "Brandi",
@@ -27,7 +39,9 @@ RSpec.describe Mentor, type: :model do
       "slack_username" => "brandi@slack.com",
       "linkedin_username" => "brandi@linked_in.com",
       "github_username" => "brandi@github.com",
-      "matched" => false
+      "program" => "BE",
+      "matched" => false,
+      "active" => true
     }
 
     mentor = Mentor.new(attributes)
@@ -40,6 +54,8 @@ RSpec.describe Mentor, type: :model do
     expect(mentor.linkedin_username).to eq(linkedin_username)
     expect(mentor.github_username).to eq(github_username)
     expect(mentor.matched).to eq(matched)
+    expect(mentor.active).to eq(active)
+    expect(mentor.program).to eq(program)
   end
 
   # it 'cannot have a duplicate email' do
