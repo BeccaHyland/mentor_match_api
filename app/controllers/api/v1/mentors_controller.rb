@@ -21,11 +21,6 @@ class Api::V1::MentorsController < ApplicationController
     Mentor.find_by_id(id).update(mentor_params)
   end
 
-  def destroy
-    id = params[:id]
-    Mentor.find_by_id(id).destroy
-  end
-
   private
     def mentor_params
       params.require(:mentor).permit(:name, :email, :city, :state, :slack_username, :linkedin_username, :github_username, :matched, :program, :active)
