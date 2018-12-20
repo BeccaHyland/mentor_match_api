@@ -17,7 +17,8 @@ class Api::V1::MentorsController < ApplicationController
   end
 
   def update
-
+    id = params[:id]
+    Mentor.find_by_id(id).update(mentor_params)
   end
 
   def destroy
