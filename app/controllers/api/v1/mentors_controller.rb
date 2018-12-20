@@ -1,5 +1,9 @@
 class Api::V1::MentorsController < ApplicationController
 
+  def create
+
+  end
+
   def index
     render json: MentorSerializer.new(Mentor.all)
   end
@@ -10,6 +14,10 @@ class Api::V1::MentorsController < ApplicationController
   end
 
   def update
+
+  end
+
+  def destroy
 
   end
 
