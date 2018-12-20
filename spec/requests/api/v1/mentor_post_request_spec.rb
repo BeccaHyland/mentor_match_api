@@ -37,8 +37,8 @@ describe 'mentors API' do
 
       mentor = Mentor.last
 
-      # expect(response).to be_unsuccessful
-      # expect(response.status).to eq(400)
+      expect(response).to_not be_successful
+      expect(response.status).to eq(401)
     end
   end
 end
