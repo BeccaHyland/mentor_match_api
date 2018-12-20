@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_20_014551) do
+ActiveRecord::Schema.define(version: 2018_12_20_020517) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "mentor_preferences", force: :cascade do |t|
+    t.bigint "mentor_id"
+    t.bigint "preference_id"
+    t.index ["mentor_id"], name: "index_mentor_preferences_on_mentor_id"
+    t.index ["preference_id"], name: "index_mentor_preferences_on_preference_id"
+  end
 
   create_table "mentors", force: :cascade do |t|
     t.string "name"
@@ -36,4 +43,6 @@ ActiveRecord::Schema.define(version: 2018_12_20_014551) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "mentor_preferences", "mentors"
+  add_foreign_key "mentor_preferences", "preferences"
 end
