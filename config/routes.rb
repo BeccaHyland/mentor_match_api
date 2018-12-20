@@ -3,10 +3,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      namespace :admin do
-        resources :mentors, only: [:create, :update, :destroy]
-      end
-      resources :mentors, only: [:index, :show]
+      resources :mentors, only: [:create, :index, :show, :update, :destroy]
     end
   end
 end
