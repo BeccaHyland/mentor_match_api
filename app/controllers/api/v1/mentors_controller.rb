@@ -13,7 +13,7 @@ class Api::V1::MentorsController < ApplicationController
 
   def show
     id = params[:id]
-    render json: MentorSerializer.new(Mentor.find_by_id(id))
+    render json: MentorSerializer.new(Mentor.find(id))
   end
 
   def update
