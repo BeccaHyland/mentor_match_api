@@ -84,4 +84,8 @@ RSpec.describe Mentor, type: :model do
   #     mentor_1 = Mentor.create(attributes_user_1)
   #     mentor_2 = Mentor.create(attributes_user_2)
   # end
+  describe 'relationships' do
+    it {should have_many(:preferences)}
+    it {should have_many(:mentor_preferences)}
+  end
 end

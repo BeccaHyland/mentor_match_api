@@ -11,4 +11,7 @@ class Mentor < ApplicationRecord
   validates_inclusion_of :active, in: [true, false]
 
   validates :email, uniqueness: true, presence: true
+
+  has_many :mentor_preferences
+  has_many :preferences, through: :mentor_preferences
 end
