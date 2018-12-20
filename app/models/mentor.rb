@@ -8,4 +8,7 @@ class Mentor < ApplicationRecord
                         :matched
 
   validates :email, uniqueness: true, presence: true
+
+  has_many :mentor_preferences
+  has_many :preferences, through: :mentor_preferences
 end
