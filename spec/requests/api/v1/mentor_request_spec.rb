@@ -12,9 +12,7 @@ describe 'mentors API' do
       expect(response.status).to eq(200)
 
       get_response = JSON.parse(response.body, symbolize_names: true)
-      # expect(get_response[:data]).to be_a(Array)
       expect(get_response[:data]).to be_a(Object)
-      # expect(get_response[:data].length).to eq(1)
 
       expect(get_response[:data][:attributes][:name]).to eq(mentor_1[:name])
       expect(get_response[:data][:attributes][:email]).to eq(mentor_1[:email])
