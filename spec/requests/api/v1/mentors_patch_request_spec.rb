@@ -19,7 +19,7 @@ describe 'mentors API' do
 
       mentor = Mentor.find_by_id(id)
 
-      expect(response.status).to eq(204)
+      expect(response.status).to eq(200)
 
       expect(mentor.name).to_not eq(previous_name)
       expect(mentor.email).to_not eq(previous_email)
