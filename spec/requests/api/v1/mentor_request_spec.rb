@@ -5,9 +5,10 @@ describe 'mentors API' do
     it 'returns a specific mentor from db' do
     mentor_1, mentor_2, mentor_3 = create_list(:mentor, 3)
 
+      id = mentor_1.id
       #payload = { }
 
-      get '/api/v1/mentors/1'
+      get "/api/v1/mentors/#{id}"
 
       expect(response.status).to eq(200)
 
