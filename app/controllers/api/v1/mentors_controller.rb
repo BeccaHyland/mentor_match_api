@@ -22,7 +22,8 @@ class Api::V1::MentorsController < ApplicationController
   end
 
   def destroy
-
+    id = params[:id]
+    Mentor.find_by_id(id).destroy
   end
 
   private
