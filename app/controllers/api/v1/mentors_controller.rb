@@ -35,6 +35,7 @@ class Api::V1::MentorsController < ApplicationController
     end
 
     def create_mentor_preferences
+      #use this method in the CREATE action
       # get the preferences out of the params and use them to POST/CREATE rows on the mentor_preferences join table
     end
 end
