@@ -3,7 +3,6 @@ require 'rails_helper'
 describe 'mentors API' do
   describe 'GET /api/v1/mentors' do
     it 'returns all mentors in db' do
-    # mentor_1, mentor_2, mentor_3 = create_list(:mentor, 3)
 
     mentor_1 = Mentor.create(name: "test mentor 1", email: "test@email.com", city: "Test City", state: "CO", slack_username: "test1", linkedin_username: "test1", github_username: "test1", program: "BE")
     mentor_2 = Mentor.create(name: "test mentor 2", email: "test@contact.com", city: "Test Town", state: "CO", slack_username: "test2", linkedin_username: "test2", github_username: "test2", program: "FE")
@@ -37,7 +36,6 @@ describe 'mentors API' do
       expect(get_response[:data].first[:attributes][:preferences].first[:title]).to eq(mentor_1.preferences.first.title)
 
       expect(get_response[:data].second[:attributes][:name]).to eq(mentor_2[:name])
-      # expect(get_response[:data].third[:attributes][:name]).to eq(mentor_3[:name])
 
     end
   end
