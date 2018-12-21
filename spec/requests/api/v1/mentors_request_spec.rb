@@ -19,7 +19,7 @@ describe 'mentors API' do
       expect(response.status).to eq(200)
 
       get_response = JSON.parse(response.body, symbolize_names: true)
-binding.pry
+
       expect(get_response[:data]).to be_an(Array)
       expect(get_response[:data].length).to eq(2)
 
@@ -33,7 +33,8 @@ binding.pry
       expect(get_response[:data].first[:attributes][:matched]).to eq(mentor_1[:matched])
       expect(get_response[:data].first[:attributes][:active]).to eq(mentor_1[:active])
       expect(get_response[:data].first[:attributes][:program]).to eq(mentor_1[:program])
-      expect(get_response[:data].first[:relationships][:preferences][:data].first[:title]).to eq(mentor_1.preferences.first.title)
+
+      expect(get_response[:data].first[:attributes][:preferences].first[:title]).to eq(mentor_1.preferences.first.title)
 
       expect(get_response[:data].second[:attributes][:name]).to eq(mentor_2[:name])
       # expect(get_response[:data].third[:attributes][:name]).to eq(mentor_3[:name])

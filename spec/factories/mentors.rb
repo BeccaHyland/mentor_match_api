@@ -8,7 +8,7 @@ FactoryBot.define do
     linkedin_username { "linkedin_username" }
     github_username { "github_username" }
     program { "BE" }
-    matched { Faker::Boolean.boolean }
-    active { Faker::Boolean.boolean }
+    matched false
+    active true
   end
 end
