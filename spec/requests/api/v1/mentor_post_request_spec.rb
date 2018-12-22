@@ -19,7 +19,7 @@ describe 'mentors API' do
       mentor = Mentor.last
 
       expect(response).to be_successful
-      expect(response.status).to eq(200)
+      expect(response.status).to eq(201)
       expect(mentor.name).to eq(payload[:name])
 
     end
