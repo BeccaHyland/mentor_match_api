@@ -10,9 +10,6 @@ describe 'mentors API' do
         city: "New York",
         state: "NY",
         slack_username: "atreyu@slack.com",
-        linkedin_username: "atreyu@linked_in.com",
-        github_username: "atreyu@github.com",
-        program: "FE",
         matched: false,
         active: true
       }
