@@ -31,5 +31,12 @@ module MentorMatchApi
     config.generators.system_tests = nil
 
     config.action_dispatch.perform_deep_munge = false
+
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', headers: :any, methods: [:get, :post, :options]
+      end
+    end
   end
 end
