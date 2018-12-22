@@ -47,8 +47,11 @@ POST `/api/v1/mentors`
 "email": "email of mentor",
 "city": "city of mentor"
 }`
-* full example:
+
 * the database already stores defaults for the attributes `active` and `matched`, so these are NOT included with a POST.
+* full example:
+
+
 `{
         	"name": "Sara Mentor",
             "email": "sara@sara.com",
