@@ -8,11 +8,6 @@ RSpec.describe Mentor, type: :model do
     it {should validate_presence_of(:city)}
     it {should validate_presence_of(:state)}
     it {should validate_presence_of(:slack_username)}
-    it {should validate_presence_of(:linkedin_username)}
-    it {should validate_presence_of(:github_username)}
-    it {should validate_presence_of(:program)}
-    it {should validate_inclusion_of(:active).in_array [true, false]}
-    it {should validate_inclusion_of(:matched).in_array [true, false]}
   end
   it 'exists' do
     mentor = Mentor.new()
@@ -24,9 +19,6 @@ RSpec.describe Mentor, type: :model do
     city = "Denver"
     state = "CO"
     slack_username = "brandi@slack.com"
-    linkedin_username = "brandi@linked_in.com"
-    github_username = "brandi@github.com"
-    program = "BE"
     matched = false
     active = true
 
@@ -37,9 +29,6 @@ RSpec.describe Mentor, type: :model do
       "city" => "Denver",
       "state" => "CO",
       "slack_username" => "brandi@slack.com",
-      "linkedin_username" => "brandi@linked_in.com",
-      "github_username" => "brandi@github.com",
-      "program" => "BE",
       "matched" => false,
       "active" => true
     }
@@ -51,11 +40,8 @@ RSpec.describe Mentor, type: :model do
     expect(mentor.city).to eq(city)
     expect(mentor.state).to eq(state)
     expect(mentor.slack_username).to eq(slack_username)
-    expect(mentor.linkedin_username).to eq(linkedin_username)
-    expect(mentor.github_username).to eq(github_username)
     expect(mentor.matched).to eq(matched)
     expect(mentor.active).to eq(active)
-    expect(mentor.program).to eq(program)
   end
 
   # it 'cannot have a duplicate email' do
@@ -65,8 +51,6 @@ RSpec.describe Mentor, type: :model do
   #       "city" => "Denver",
   #       "state" => "CO",
   #       "slack_username" => "brandi@slack.com",
-  #       "linkedin_username" => "brandi@linked_in.com",
-  #       "github_username" => "brandi@github.com",
   #       "matched" => false
   #     }
   #
@@ -76,8 +60,6 @@ RSpec.describe Mentor, type: :model do
   #       "city" => "Denver",
   #       "state" => "CO",
   #       "slack_username" => "brandi@slack.com",
-  #       "linkedin_username" => "brandi@linked_in.com",
-  #       "github_username" => "brandi@github.com",
   #       "matched" => false
   #     }
   #

@@ -4,11 +4,8 @@ FactoryBot.define do
     email {Faker::Internet.email}
     city { "Denver" }
     state { "CO" }
-    slack_username { Faker::Cat.name }
-    linkedin_username { "linkedin_username" }
-    github_username { "github_username" }
-    program { "BE" }
-    matched false
-    active true
+    slack_username { "slack_username" }
+    matched { false }
+    active { true }
   end
 end
