@@ -31,11 +31,11 @@ class Api::V1::MentorsController < ApplicationController
 
   private
     def mentor_params
-      params.require(:mentor).permit(:name, :email, :city, :state, :slack_username, :linkedin_username, :github_username, :matched, :program, :active)
+      params.require(:mentor).permit(:name, :email, :city, :state, :country, :slack_username, :matched, :active, :pronouns, :current_title, :current_employer, :industries, :background, :ways_to_mentor, :expertise_tech, :expertise_non_tech, :mentee_capacity, :meeting_location)
     end
 
     def create_mentor_preferences
       #use this method in the CREATE action
-      # get the preferences out of the params and use them to POST/CREATE rows on the mentor_preferences join table
+      # get the preferences out of the params and use them to mentor_preferences join table
     end
 end

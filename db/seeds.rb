@@ -15,6 +15,7 @@ if Rails.env == 'development' || Rails.env == 'production'
     email: "mb@gmail.com",
     city: "San Francisco",
     state: "CA",
+    country: "Great Britain",
     slack_username: "mb@slack.com",
     matched: true,
     active: true,
@@ -35,6 +36,7 @@ if Rails.env == 'development' || Rails.env == 'production'
     email: "ph@gmail.com",
     city: "San Francisco",
     state: "CA",
+    country: "Great Britain",
     slack_username: "ph@slack.com",
     matched: false,
     active: true,
@@ -54,6 +56,7 @@ if Rails.env == 'development' || Rails.env == 'production'
     email: "sm@gmail.com",
     city: "San Francisco",
     state: "CA",
+    country: "Great Britain",
     slack_username: "sm@slack.com",
     matched: true,
     active: false,
@@ -71,5 +74,7 @@ if Rails.env == 'development' || Rails.env == 'production'
 
   mentor1.preferences.create!({title: "New bakers"})
   mentor2.preferences.create!({title: "Experienced bakers"})
+
+  puts "Seeding complete!"
 
 end
