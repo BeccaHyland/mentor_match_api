@@ -3,7 +3,7 @@ class Api::V1::MentorsController < ApplicationController
   def create
     mentor = Mentor.new(mentor_params)
     if mentor.save
-      render json: MentorSerializer.new(mentor)
+      render json: MentorSerializer.new(mentor), status: 201
     else
       render json: {}, status: 401
     end
