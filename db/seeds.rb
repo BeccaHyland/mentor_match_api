@@ -5,45 +5,71 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+MentorPreference.destroy_all
+Preference.destroy_all
 Mentor.destroy_all
 
 if Rails.env == 'development' || Rails.env == 'production'
-  Mentor.create!([{
+  mentor1 = Mentor.create!(
     name: "Mary Berry",
     email: "mb@gmail.com",
     city: "San Francisco",
     state: "CA",
     slack_username: "mb@slack.com",
-    linkedin_username: "mb@linked_in.com",
-    github_username: "mb@github.com",
     matched: true,
     active: true,
-    program: "BE"
-    },
+    pronouns: "she/her",
+    current_title: "Judge #1",
+    current_employer: "BBC",
+    industries: ["Hospitality", "Law & Order"],
+    background: "I am one tough cookie.",
+    ways_to_mentor: ["1-to-1", "resume & cover letter"],
+    expertise_tech: ["none"],
+    expertise_non_tech: ["baking", "coaching"],
+    mentee_capacity: 10,
+    meeting_location: "Great Britain"
+  )
 
-    {
+  mentor2 = Mentor.create!(
     name: "Paul Hollywood",
     email: "ph@gmail.com",
     city: "San Francisco",
     state: "CA",
     slack_username: "ph@slack.com",
-    linkedin_username: "ph@linked_in.com",
-    github_username: "ph@github.com",
-    matched: true,
+    matched: false,
     active: true,
-    program: "BE"
-    },
-    {
+    pronouns: "she/her",
+    current_title: "Judge #1",
+    current_employer: "BBC",
+    industries: ["Hospitality", "Law & Order"],
+    background: "Saying what needs to be said.",
+    ways_to_mentor: ["group sessions", "resume & cover letter"],
+    expertise_tech: ["none"],
+    expertise_non_tech: ["flambe-ing", "career coaching"],
+    mentee_capacity: 5,
+    meeting_location: "Great Britain"
+  )
+  mentor3 = Mentor.create!(
     name: "Susan Mel",
     email: "sm@gmail.com",
     city: "San Francisco",
     state: "CA",
     slack_username: "sm@slack.com",
-    linkedin_username: "sm@linked_in.com",
-    github_username: "sm@github.com",
     matched: true,
-    active: true,
-    program: "BE"
-    }])
+    active: false,
+    pronouns: "she/her",
+    current_title: "Host Extraordinaire",
+    current_employer: "BBC",
+    industries: ["Entertainment", "Counseling"],
+    background: "Keeping the pin rolling.",
+    ways_to_mentor: ["1-to-1", "career coaching"],
+    expertise_tech: ["A/V", "Videography"],
+    expertise_non_tech: ["interviewing", "coaching"],
+    mentee_capacity: 20,
+    meeting_location: "Great Britain"
+  )
+
+  mentor1.preferences.create!({title: "New bakers"})
+  mentor2.preferences.create!({title: "Experienced bakers"})
+
 end
