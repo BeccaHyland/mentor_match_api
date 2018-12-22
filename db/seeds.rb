@@ -75,4 +75,6 @@ if Rails.env == 'development' || Rails.env == 'production'
   mentor1.preferences.create!({title: "New bakers"})
   mentor2.preferences.create!({title: "Experienced bakers"})
 
+  puts "Seeding complete!"
+
 end
