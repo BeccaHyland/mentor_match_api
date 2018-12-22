@@ -83,6 +83,9 @@ general:
 gem 'fast_jsonapi'
 gem 'rack-cors', require 'rack/cors'
 gem 'active-designer'
+gem 'bcrypt'
+gem 'knock'
+gem 'jwt'
 
 development & test
   gem 'rspec-rails'
