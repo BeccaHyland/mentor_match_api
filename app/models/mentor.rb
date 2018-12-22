@@ -1,9 +1,7 @@
 class Mentor < ApplicationRecord
   validates_presence_of :name,
-                        :city,
-                        :state,
-                        :slack_username
-                        
+                        :city
+
   validates :email, uniqueness: true, presence: true
 
   has_many :mentor_preferences
