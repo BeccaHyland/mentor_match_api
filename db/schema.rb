@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_22_002117) do
+ActiveRecord::Schema.define(version: 2018_12_22_204132) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,18 +42,13 @@ ActiveRecord::Schema.define(version: 2018_12_22_002117) do
     t.string "expertise_non_tech", default: [], array: true
     t.integer "mentee_capacity"
     t.text "meeting_location"
+    t.string "country", default: "US"
   end
 
   create_table "preferences", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password_digest"
   end
 
   add_foreign_key "mentor_preferences", "mentors"
