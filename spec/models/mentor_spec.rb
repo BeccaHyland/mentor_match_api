@@ -22,12 +22,12 @@ RSpec.describe Mentor, type: :model do
       stack_preference = "BE"
 
       attributes = {
-        "name" => "Brandi",
-        "email" => "b@gmail.com",
-        "city" => "Denver",
-        "state" => "CO",
-        "slack_username" => "brandi@slack.com",
-        "stack_preference" => "BE"
+        "name" => name,
+        "email" => email,
+        "city" => city,
+        "state" => state,
+        "slack_username" => slack_username,
+        "stack_preference" => stack_preference
       }
 
       mentor = Mentor.new(attributes)
