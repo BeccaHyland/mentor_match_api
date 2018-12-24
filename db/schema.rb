@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_22_204132) do
+ActiveRecord::Schema.define(version: 2018_12_24_180321) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2018_12_22_204132) do
     t.integer "mentee_capacity"
     t.text "meeting_location"
     t.string "country", default: "US"
+    t.string "preference", default: "no preference"
   end
 
   create_table "preferences", force: :cascade do |t|
