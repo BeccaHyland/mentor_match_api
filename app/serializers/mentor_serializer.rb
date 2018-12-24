@@ -18,7 +18,8 @@ class MentorSerializer
               :expertise_tech,
               :expertise_non_tech,
               :mentee_capacity,
-              :meeting_location
+              :meeting_location,
+              :stack_preference
 
   attribute :preferences do |mentor|
     mentor.preferences.map do |preference|
