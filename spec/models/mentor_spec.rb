@@ -20,6 +20,7 @@ RSpec.describe Mentor, type: :model do
       state = "CO"
       slack_username = "brandi@slack.com"
       stack_preference = "BE"
+      identity_preference = ["veteran", "female-identifying"]
 
       attributes = {
         "name" => name,
@@ -27,7 +28,8 @@ RSpec.describe Mentor, type: :model do
         "city" => city,
         "state" => state,
         "slack_username" => slack_username,
-        "stack_preference" => stack_preference
+        "stack_preference" => stack_preference,
+        "identity_preference" => identity_preference
       }
 
       mentor = Mentor.new(attributes)
@@ -38,6 +40,7 @@ RSpec.describe Mentor, type: :model do
       expect(mentor.state).to eq(state)
       expect(mentor.slack_username).to eq(slack_username)
       expect(mentor.stack_preference).to eq(stack_preference)
+      expect(mentor.identity_preference).to eq(identity_preference)
       expect(mentor.matched).to eq(false)
       expect(mentor.active).to eq(true)
     end
