@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_24_180731) do
+ActiveRecord::Schema.define(version: 2018_12_24_181447) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2018_12_24_180731) do
     t.text "meeting_location"
     t.string "country", default: "US"
     t.string "stack_preference", default: "no preference"
+    t.string "identity_preference", default: [], array: true
   end
 
   create_table "preferences", force: :cascade do |t|
