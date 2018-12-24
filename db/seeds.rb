@@ -5,8 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-MentorPreference.destroy_all
-Preference.destroy_all
 Mentor.destroy_all
 
 if Rails.env == 'development' || Rails.env == 'production'
