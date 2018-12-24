@@ -19,13 +19,15 @@ RSpec.describe Mentor, type: :model do
       city = "Denver"
       state = "CO"
       slack_username = "brandi@slack.com"
+      stack_preference = "BE"
 
       attributes = {
         "name" => "Brandi",
         "email" => "b@gmail.com",
         "city" => "Denver",
         "state" => "CO",
-        "slack_username" => "brandi@slack.com"
+        "slack_username" => "brandi@slack.com",
+        "stack_preference" => "BE"
       }
 
       mentor = Mentor.new(attributes)
@@ -35,14 +37,10 @@ RSpec.describe Mentor, type: :model do
       expect(mentor.city).to eq(city)
       expect(mentor.state).to eq(state)
       expect(mentor.slack_username).to eq(slack_username)
+      expect(mentor.stack_preference).to eq(stack_preference)
       expect(mentor.matched).to eq(false)
       expect(mentor.active).to eq(true)
     end
-  end
-
-  describe 'relationships' do
-    it {should have_many(:preferences)}
-    it {should have_many(:mentor_preferences)}
   end
 
   # it 'cannot have a duplicate email' do
