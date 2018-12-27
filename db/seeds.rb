@@ -5,8 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-MentorPreference.destroy_all
-Preference.destroy_all
 Mentor.destroy_all
 
 if Rails.env == 'development' || Rails.env == 'production'
@@ -28,7 +26,9 @@ if Rails.env == 'development' || Rails.env == 'production'
     expertise_tech: ["none"],
     expertise_non_tech: ["baking", "coaching"],
     mentee_capacity: 10,
-    meeting_location: "Great Britain"
+    meeting_location: "Great Britain",
+    stack_preference: "BE",
+    identity_preference: ["veteran", "female-identifying"]
   )
 
   mentor2 = Mentor.create!(
@@ -49,7 +49,9 @@ if Rails.env == 'development' || Rails.env == 'production'
     expertise_tech: ["none"],
     expertise_non_tech: ["flambe-ing", "career coaching"],
     mentee_capacity: 5,
-    meeting_location: "Great Britain"
+    meeting_location: "Great Britain",
+    stack_preference: "FE",
+    identity_preference: ["parent"]
   )
   mentor3 = Mentor.create!(
     name: "Susan Mel",
@@ -69,11 +71,10 @@ if Rails.env == 'development' || Rails.env == 'production'
     expertise_tech: ["A/V", "Videography"],
     expertise_non_tech: ["interviewing", "coaching"],
     mentee_capacity: 20,
-    meeting_location: "Great Britain"
+    meeting_location: "Great Britain",
+    stack_preference: "FE",
+    identity_preference: ["no preference"]
   )
-
-  mentor1.preferences.create!({title: "New bakers"})
-  mentor2.preferences.create!({title: "Experienced bakers"})
 
   puts "Seeding complete!"
 
