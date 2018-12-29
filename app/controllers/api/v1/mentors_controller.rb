@@ -31,7 +31,25 @@ class Api::V1::MentorsController < ApplicationController
 
   private
     def mentor_params
-      params.require(:mentor).permit(:name, :email, :city, :state, :country, :slack_username, :matched, :active, :pronouns, :current_title, :current_employer, :industries, :background, :ways_to_mentor, :expertise_tech, :expertise_non_tech, :mentee_capacity, :meeting_location)
+      params.require(:mentor).permit(:name,
+                                    :email,
+                                    :city,
+                                    :state,
+                                    :country,
+                                    :slack_username,
+                                    :matched,
+                                    :active,
+                                    :pronouns,
+                                    :current_title,
+                                    :current_employer,
+                                    :background,
+                                    :mentee_capacity,
+                                    :meeting_location,
+                                    industries: [],
+                                    ways_to_mentor: [],
+                                    expertise_non_tech: [],
+                                    stack_preference: [],
+                                    identity_preference: [])
     end
 
     def create_mentor_preferences
