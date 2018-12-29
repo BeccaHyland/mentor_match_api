@@ -45,11 +45,11 @@ class Api::V1::MentorsController < ApplicationController
                                     :background,
                                     :mentee_capacity,
                                     :meeting_location,
+                                    :stack_preference,
                                     industries: [],
                                     ways_to_mentor: [],
                                     expertise_tech: [],
                                     expertise_non_tech: [],
-                                    stack_preference: [],
                                     identity_preference: [])
     end
 
