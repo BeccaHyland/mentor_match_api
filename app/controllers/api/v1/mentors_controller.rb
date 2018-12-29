@@ -47,6 +47,7 @@ class Api::V1::MentorsController < ApplicationController
                                     :meeting_location,
                                     industries: [],
                                     ways_to_mentor: [],
+                                    expertise_tech: [],
                                     expertise_non_tech: [],
                                     stack_preference: [],
                                     identity_preference: [])
