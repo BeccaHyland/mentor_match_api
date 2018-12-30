@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_29_164305) do
+ActiveRecord::Schema.define(version: 2018_12_30_173804) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,16 @@ ActiveRecord::Schema.define(version: 2018_12_29_164305) do
     t.string "identity_preference", default: [], array: true
   end
 
+  create_table "student_mentors", force: :cascade do |t|
+    t.bigint "mentor_id"
+    t.bigint "student_id"
+    t.boolean "active", default: true, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mentor_id"], name: "index_student_mentors_on_mentor_id"
+    t.index ["student_id"], name: "index_student_mentors_on_student_id"
+  end
+
   create_table "students", force: :cascade do |t|
     t.string "name"
     t.string "pronouns"
@@ -65,4 +75,6 @@ ActiveRecord::Schema.define(version: 2018_12_29_164305) do
     t.string "token"
   end
 
+  add_foreign_key "student_mentors", "mentors"
+  add_foreign_key "student_mentors", "students"
 end
