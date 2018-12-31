@@ -18,7 +18,7 @@ describe 'mentors API' do
         current_employer: "Atlantic Records",
         background: "Punk Rock",
         mentee_capacity: 1,
-        meeting_location: "Turing",
+        meeting_location: ["Turing"],
         industries: ["here", "there"],
         ways_to_mentor: ["wisdom", "insight"],
         expertise_tech: ["wisdom", "insight"],
@@ -28,7 +28,6 @@ describe 'mentors API' do
         expertise_tech: ["Ruby", "Rails"],
         identity_preference: ["parent", "veteran"]
       }
-
       post '/api/v1/mentors', params: {mentor: payload}
 
       mentor = Mentor.last
