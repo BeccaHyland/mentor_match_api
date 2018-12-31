@@ -31,3 +31,6 @@
 /config/application.yml
 
 /lib/assets/seeds
+
+# Ignore application configuration
+/config/application.yml
