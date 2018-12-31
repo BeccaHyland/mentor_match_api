@@ -29,3 +29,5 @@
 /coverage
 
 /config/application.yml
+
+/lib/assets/seeds
