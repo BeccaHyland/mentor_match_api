@@ -51,27 +51,27 @@ POST `/api/v1/mentors`
 * the database already stores defaults for the attributes `active` and `matched`, so these are NOT included with a POST.
 * full example:
 
-<br />
+<br>
 {
-  <br />
-        	"name": "Sara Mentor", <br />
-            "email": "sara@sara.com", <br />
-            "city": "Sarahville", <br />
-            "state": "CO", <br />
-            "country": "(will default to US if not provided)", <br />
-            "slack_username": "sara_slack", <br />
-            "pronouns": "she/her", <br />
-            "current_title": "Software Developer", <br />
-            "current_employer": "Sara's employer", <br />
-            "background": "I was a student in the FE program, and I love my cat and learning Vue", <br />
-            "industries": ["food service", "sales"], <br />
-            "ways_to_mentor": ["1-on-1", "coffee meetings"], <br />
-            "expertise_tech": ["JavaScript", "Mocha/Chai", "Node.js", "React", "Redux"], <br />
-            "expertise_non_tech": ["rock-climbing", "parenting", "cooking"], <br />
-            "mentee_capacity": 1, *(this is an integer)* <br />
-            "meeting_location": ["remote"], <br />
-            "preferences": ["parent", "female-identifying", "FE"] <br />
-}<br />
+  <br>
+        	"name": "Sara Mentor", <br>
+            "email": "sara@sara.com", <br>
+            "city": "Sarahville", <br>
+            "state": "CO", <br>
+            "country": "(will default to US if not provided)", <br>
+            "slack_username": "sara_slack", <br>
+            "pronouns": "she/her", <br>
+            "current_title": "Software Developer", <br>
+            "current_employer": "Sara's employer", <br>
+            "background": "I was a student in the FE program, and I love my cat and learning Vue", <br>
+            "industries": ["food service", "sales"], <br>
+            "ways_to_mentor": ["1-on-1", "coffee meetings"], <br>
+            "expertise_tech": ["JavaScript", "Mocha/Chai", "Node.js", "React", "Redux"], <br>
+            "expertise_non_tech": ["rock-climbing", "parenting", "cooking"], <br>
+            "mentee_capacity": 1, *(this is an integer)* <br>
+            "meeting_location": ["remote"], <br>
+            "preferences": ["parent", "female-identifying", "FE"] <br>
+}<br>
 
 ### Build Details: *(draft collection of all details, to be formatted)*
 
