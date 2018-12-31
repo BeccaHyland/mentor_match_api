@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_31_195703) do
+ActiveRecord::Schema.define(version: 2018_12_31_215957) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 2018_12_31_195703) do
     t.string "name"
     t.string "role", default: "user"
     t.string "login"
+    t.string "avatar_url"
   end
 
   add_foreign_key "student_mentors", "mentors"
