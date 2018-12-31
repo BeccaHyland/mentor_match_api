@@ -4,7 +4,7 @@
 
 ## Introduction
   Mentor Match is an app for internal staff and student use at Turing School of Software & Design. In Module 1, Turing students have the opportunity to be matched to a software development mentor, usually an alumni, so this app gives admin tools to manage the matching process.
-  
+
  In later Modules, students also contact alumni for short-term mentoring as a part of students' Professional Devlelopment curriculum, such as mock interviews and individual coffee meetings. Students can log in to the app to search for mentors in areas of interest and to connect.
 
 In this repo, you will find the code and documentation for the Mentor Match back end, which provides the database and API endpoints for the Mentor Match Project and is deployed at https://mentor-match-api.herokuapp.com/
@@ -20,7 +20,7 @@ All successful database requests return JSON in an easy-to-consume format genera
   ### 1.  All mentors in the database:
   GET `/api/v1/mentors` *currently unsecured, authorization coming soon*
   * returns JSON in the following format:
-  
+
   <img width="640" alt="screen shot 2018-12-22 at 2 26 45 pm" src="https://user-images.githubusercontent.com/39714935/50378771-06c2c700-05f7-11e9-945a-3bd7af26f190.png">
 
 ### 2. One mentor by its id
@@ -32,7 +32,7 @@ GET `/api/v1/mentors/INSERT ID HERE`
 ### 3. Create a new mentor in the database
 POST `/api/v1/mentors`
 * request must include:
-#### HEADERS: 
+#### HEADERS:
 `{
 "Content-Type": "application/json",
 "Accept": "application/json"
@@ -51,26 +51,27 @@ POST `/api/v1/mentors`
 * the database already stores defaults for the attributes `active` and `matched`, so these are NOT included with a POST.
 * full example:
 
-
-`{
-        	"name": "Sara Mentor",
-            "email": "sara@sara.com",
-            "city": "Sarahville",
-            "state": "CO",
-            "country": "(will default to US if not provided)",
-            "slack_username": "sara_slack",
-            "pronouns": "she/her",
-            "current_title": "Software Developer",
-            "current_employer": "Sara's employer",
-            "background": "I was a student in the FE program, and I love my cat and learning Vue",
-            "industries": ["food service", "sales"],
-            "ways_to_mentor": ["1-on-1", "coffee meetings"],
-            "expertise_tech": ["JavaScript", "Mocha/Chai", "Node.js", "React", "Redux"],
-            "expertise_non_tech": ["rock-climbing", "parenting", "cooking"],
-            "mentee_capacity": 1, *(this is an integer)*
-            "meeting_location": "remote",
-            "preferences": ["parent", "female-identifying", "FE"]
-        }`
+<br>
+{
+  <br>
+        	"name": "Sara Mentor", <br>
+            "email": "sara@sara.com", <br>
+            "city": "Sarahville", <br>
+            "state": "CO", <br>
+            "country": "(will default to US if not provided)", <br>
+            "slack_username": "sara_slack", <br>
+            "pronouns": "she/her", <br>
+            "current_title": "Software Developer", <br>
+            "current_employer": "Sara's employer", <br>
+            "background": "I was a student in the FE program, and I love my cat and learning Vue", <br>
+            "industries": ["food service", "sales"], <br>
+            "ways_to_mentor": ["1-on-1", "coffee meetings"], <br>
+            "expertise_tech": ["JavaScript", "Mocha/Chai", "Node.js", "React", "Redux"], <br>
+            "expertise_non_tech": ["rock-climbing", "parenting", "cooking"], <br>
+            "mentee_capacity": 1, *(this is an integer)* <br>
+            "meeting_location": ["remote"], <br>
+            "preferences": ["parent", "female-identifying", "FE"] <br>
+}<br>
 
 ### Build Details: *(draft collection of all details, to be formatted)*
 
@@ -78,7 +79,7 @@ initial build command: `rails new mentor_match_api -T -d postgresql --skip-sprin
 
 Gems added:
 
-general: 
+general:
 
 gem 'fast_jsonapi'
 gem 'rack-cors', require 'rack/cors'
@@ -94,13 +95,13 @@ development & test
   gem 'database_cleaner'
   gem 'faker'
 
-  
+
   test only
   gem 'simplecov'
- 
+
  Run `rails g rspec:install`
- 
- To rails_helper, added 
+
+ To rails_helper, added
 
  `Shoulda::Matchers.configure do |config|
   config.integrate do |with|
