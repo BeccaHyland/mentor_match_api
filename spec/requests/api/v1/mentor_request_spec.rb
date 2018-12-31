@@ -10,7 +10,7 @@ describe 'mentors API' do
 
       mentor_1 = Mentor.create(name: "test mentor 1", email: "test@email.com", city: "Test City", state: "CO", slack_username: "test1")
       mentor_2 = Mentor.create(name: "test mentor 2", email: "test@contact.com", city: "Test Town", state: "CO", slack_username: "test2")
-      binding.pry
+
       id = mentor_1.id
 
       get "/api/v1/mentors/#{id}", params: {

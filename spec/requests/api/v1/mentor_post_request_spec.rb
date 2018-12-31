@@ -1,9 +1,13 @@
 require 'rails_helper'
+require './lib/tokenator.rb'
+include Tokenator
 
 describe 'mentors API' do
   describe 'POST /api/v1/mentors/' do
     it 'posts successfully to the db' do
-
+      user = User.create(name: "name_of_user", login: "xyz")
+      token = Tokenator.encode(user.login)
+      
       payload = {
         name: "Atreyu",
         email: "never_ending@gmail.com",
@@ -28,7 +32,10 @@ describe 'mentors API' do
         expertise_tech: ["Ruby", "Rails"],
         identity_preference: ["parent", "veteran"]
       }
-      post '/api/v1/mentors', params: {mentor: payload}
+      post '/api/v1/mentors', params: {
+        mentor: payload,
+        token: token
+      }
 
       mentor = Mentor.last
 
@@ -56,13 +63,19 @@ describe 'mentors API' do
 
     end
     it 'does not post successfully with missing attributes' do
+      user = User.create(name: "name_of_user", login: "xyz")
+      token = Tokenator.encode(user.login)
+
       payload = {
         name: "Atreyu",
         email: "never_ending@gmail.com",
         active: true
       }
 
-      post '/api/v1/mentors', params: {mentor: payload}
+      post '/api/v1/mentors', params: {
+        mentor: payload,
+        token: token
+      }
 
       mentor = Mentor.last
 
