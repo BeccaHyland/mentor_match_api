@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_30_173804) do
+ActiveRecord::Schema.define(version: 2018_12_31_165748) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,10 +34,10 @@ ActiveRecord::Schema.define(version: 2018_12_30_173804) do
     t.string "expertise_tech", default: [], array: true
     t.string "expertise_non_tech", default: [], array: true
     t.integer "mentee_capacity"
-    t.text "meeting_location"
     t.string "country", default: "US"
     t.string "stack_preference", default: "no preference"
     t.string "identity_preference", default: [], array: true
+    t.string "meeting_location", default: [], array: true
   end
 
   create_table "student_mentors", force: :cascade do |t|
@@ -69,10 +69,6 @@ ActiveRecord::Schema.define(version: 2018_12_30_173804) do
     t.string "name"
     t.string "email"
     t.string "password_digest"
-    t.string "role", default: "user"
-    t.string "ghub_user_id"
-    t.string "ghub_username"
-    t.string "token"
   end
 
   add_foreign_key "student_mentors", "mentors"
