@@ -1,5 +1,5 @@
 module Tokenator
-  def self.enocde(sub)
+  def self.encode(sub)
     payload = {
       iss: ENV['MENTOR_MATCH_CLIENT_URL'],
       sub: sub,

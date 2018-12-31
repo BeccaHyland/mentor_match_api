@@ -1,4 +1,8 @@
+require './lib/tokenator.rb'
+
 class ApplicationController < ActionController::Base
+  include Tokenator
+
   protect_from_forgery with: :null_session
 
   def current_user

@@ -1,4 +1,8 @@
+require './lib/tokenator.rb'
+
 class AuthenticationController < ApplicationController
+  include Tokenator
+
   def create
     authenticator = Authenticator.new
     user_info = authenticator.github(params[:code])
