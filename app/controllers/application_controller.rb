@@ -19,4 +19,16 @@ class ApplicationController < ActionController::Base
     head :unauthorized unless logged_in?
   end
 
+  def admin_user?
+    token = params[:token]
+    payload = Tokenator.decode(token)
+    @current_user ||= User.find_by_login(payload[0]['sub'])
+
+    @current_user.role == "admin"
+  end
+
+  def authenticate_admin!
+    head :unauthorized unless admin_user?
+  end
+
 end
