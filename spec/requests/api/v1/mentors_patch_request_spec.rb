@@ -1,8 +1,12 @@
 require 'rails_helper'
+require './lib/tokenator.rb'
+include Tokenator
 
 describe 'mentors API' do
   describe 'PATCH /api/v1/mentors/:id' do
     it 'patches successfully to /api/v1/mentors/:id' do
+      user = User.create(name: "name_of_user", login: "xyz")
+      token = Tokenator.encode(user.login)
 
       id = create(:mentor).id
       previous_name = Mentor.last.name
@@ -15,7 +19,10 @@ describe 'mentors API' do
         matched: true
       }
 
-      patch "/api/v1/mentors/#{id}", params: {mentor: payload}
+      patch "/api/v1/mentors/#{id}", params: {
+        mentor: payload,
+        token: token
+      }
 
       mentor = Mentor.find_by_id(id)
 

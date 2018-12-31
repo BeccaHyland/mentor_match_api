@@ -36,6 +36,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'fast_jsonapi'
 gem 'rack-cors', require: 'rack/cors'
 gem 'active-designer'
+gem 'faraday'
+gem 'jwt'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -48,6 +50,7 @@ group :development, :test do
   gem 'launchy'
   gem 'database_cleaner'
   gem 'faker'
+  gem 'figaro'
 end
 
 group :development do

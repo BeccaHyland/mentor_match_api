@@ -1,5 +1,6 @@
 class Api::V1::MentorsController < ApplicationController
-
+  before_action :authenticate_user!
+  
   def create
     mentor = Mentor.new(mentor_params)
     if mentor.save

@@ -1,15 +1,21 @@
 require 'rails_helper'
+require './lib/tokenator.rb'
+include Tokenator
 
 describe 'mentors API' do
   describe 'GET /api/v1/mentors/:id' do
     it 'returns a specific mentor from db' do
+      user = User.create(name: "name_of_user", login: "xyz")
+      token = Tokenator.encode(user.login)
+
       mentor_1 = Mentor.create(name: "test mentor 1", email: "test@email.com", city: "Test City", state: "CO", slack_username: "test1")
       mentor_2 = Mentor.create(name: "test mentor 2", email: "test@contact.com", city: "Test Town", state: "CO", slack_username: "test2")
 
       id = mentor_1.id
-      #payload = { }
 
-      get "/api/v1/mentors/#{id}"
+      get "/api/v1/mentors/#{id}", params: {
+        token: token
+      }
 
       expect(response.status).to eq(200)
 
