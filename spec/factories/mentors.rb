@@ -1,7 +1,8 @@
 FactoryBot.define do
   factory :mentor do
-    name {Faker::TheITCrowd.character}
-    email {Faker::Internet.email}
+    user
+    name { Faker::TheITCrowd.character }
+    email { Faker::Internet.email }
     city { "Denver" }
     state { "CO" }
     slack_username { "slack_username" }
@@ -19,6 +20,5 @@ FactoryBot.define do
     mentee_capacity { 1 }
     meeting_location {""}
     country {""}
-
   end
 end
