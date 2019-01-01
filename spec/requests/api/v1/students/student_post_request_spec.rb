@@ -20,7 +20,7 @@ describe 'students API' do
         identity_marker: ["male-identifying"],
         industries: ["civic tech"]
       }
-      
+
       post '/api/v1/students', params: {
         student: payload,
         token: token
@@ -47,7 +47,6 @@ describe 'students API' do
 
       payload = {
         name: "Atreyu",
-        email: "never_ending@gmail.com",
         active: true
       }
 
