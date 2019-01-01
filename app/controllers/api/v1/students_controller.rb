@@ -1,5 +1,5 @@
 class Api::V1::StudentsController < ApplicationController
-  before_action :authenticate_user!
+  #before_action :authenticate_user!
 
   def create
     student = Student.new(student_params)
