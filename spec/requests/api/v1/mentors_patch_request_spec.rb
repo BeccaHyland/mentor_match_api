@@ -6,7 +6,7 @@ describe 'mentors API' do
   describe 'PATCH /api/v1/mentors/:id' do
     describe 'as an admin user' do
       it 'patches successfully to /api/v1/mentors/:id' do
-        user = User.create(name: "name_of_user", login: "xyz", role: "admin")
+        user = create(:user, role: "admin")
         token = Tokenator.encode(user.login)
 
         id = create(:mentor).id
