@@ -20,11 +20,8 @@ class ApplicationController < ActionController::Base
   end
 
   def admin_user?
-    token = params[:token]
-    payload = Tokenator.decode(token)
-    @current_user ||= User.find_by_login(payload[0]['sub'])
-
-    @current_user.role == "admin"
+    #not sure if current_user here needs an @
+    current_user.role == "admin"
   end
 
   def authorize_admin!
