@@ -3,11 +3,16 @@ class Api::V1::MentorsController < ApplicationController
   before_action :authorize_admin!, only: :destroy
 
   def create
-    mentor = Mentor.new(mentor_params)
-    if mentor.save
-      render json: MentorSerializer.new(mentor), status: 201
-    else
+    if admin_user?
       render json: {}, status: 401
+    else
+      mentor = Mentor.new(mentor_params)
+      mentor.user_id = @current_user.id
+      if mentor.save
+        render json: MentorSerializer.new(mentor), status: 201
+      else
+        render json: {}, status: 400
+      end
     end
   end
 
