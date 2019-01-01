@@ -2,7 +2,7 @@ class Api::V1::StudentsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    mentor = Student.new(student_params)
+    student = Student.new(student_params)
     if student.save
       render json: StudentSerializer.new(student), status: 201
     else
