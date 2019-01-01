@@ -27,8 +27,7 @@ class ApplicationController < ActionController::Base
     @current_user.role == "admin"
   end
 
-  def authenticate_admin!
+  def authorize_admin!
     head :unauthorized unless admin_user?
   end
-
 end
