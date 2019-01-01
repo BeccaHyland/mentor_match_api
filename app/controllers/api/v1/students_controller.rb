@@ -39,8 +39,8 @@ class Api::V1::StudentsController < ApplicationController
                                     :matched,
                                     :active,
                                     :background,
-                                    industries: [],
                                     :stack,
-                                    identity_marker: []
+                                    industries: [],
+                                    identity_marker: [])
     end
 end
