@@ -38,7 +38,8 @@ class Api::V1::MentorsController < ApplicationController
   private
 
   def request_matches_user?
-    @current_user.id == params[:id].to_i
+    mentor = Mentor.find(params[:id].to_i)
+    @current_user.id == mentor.user.id
   end
 
   def create_mentor_user
