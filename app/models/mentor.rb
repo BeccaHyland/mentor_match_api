@@ -4,9 +4,12 @@ class Mentor < ApplicationRecord
 
   validates :email, uniqueness: true, presence: true
 
+  belongs_to :user
+
   has_many :mentor_preferences
   has_many :preferences, through: :mentor_preferences
 
   has_many :student_mentors
   has_many :students, through: :student_mentors
+
 end

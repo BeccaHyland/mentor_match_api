@@ -2,7 +2,6 @@ require './lib/tokenator.rb'
 
 class ApplicationController < ActionController::Base
   include Tokenator
-
   protect_from_forgery with: :null_session
 
   def current_user
@@ -15,8 +14,15 @@ class ApplicationController < ActionController::Base
     current_user != nil
   end
 
+  def admin_user?
+    current_user.role == "admin"
+  end
+
   def authenticate_user!
     head :unauthorized unless logged_in?
   end
 
+  def authorize_admin!
+    head :unauthorized unless admin_user?
+  end
 end

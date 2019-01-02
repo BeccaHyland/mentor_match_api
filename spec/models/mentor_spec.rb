@@ -8,6 +8,10 @@ RSpec.describe Mentor, type: :model do
     it {should validate_presence_of(:city)}
   end
 
+  describe 'associations' do
+    it {should belong_to(:user)}
+  end
+
   describe 'model tests' do
     it 'exists' do
       mentor = Mentor.new()
