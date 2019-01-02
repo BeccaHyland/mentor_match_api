@@ -1,6 +1,7 @@
 class Api::V1::StudentsController < ApplicationController
-  #before_action :authenticate_user!
-
+  before_action :authenticate_user!
+  before_action :authorize_admin!, only: :destroy
+  
   def create
     student = Student.new(student_params)
     if student.save
