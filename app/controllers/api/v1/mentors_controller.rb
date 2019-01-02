@@ -27,8 +27,8 @@ class Api::V1::MentorsController < ApplicationController
   def show
     id = params[:id]
     if admin_user? || request_matches_user?
-      render json: AdminMentorSerializer.new(Mentor.find(id))
       # matching user does see the admin version of the data because it is their own data
+      render json: AdminMentorSerializer.new(Mentor.find(id))
     else
       render json: MentorSerializer.new(Mentor.find(id))
     end
