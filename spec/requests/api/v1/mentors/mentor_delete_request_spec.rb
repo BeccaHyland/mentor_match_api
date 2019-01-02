@@ -6,7 +6,7 @@ describe 'mentor API endpoints' do
   describe 'DELETE request to /api/v1/mentors/:id' do
     describe 'as an admin user' do
       it 'deletes a specific mentor from db' do
-        user = User.create(name: "name_of_user", login: "xyz", role: "admin")
+        user = create(:user, role: "admin")
         token = Tokenator.encode(user.login)
 
         mentor_1 = create :mentor
@@ -27,7 +27,7 @@ describe 'mentor API endpoints' do
 
     describe 'as a non-admin user' do
       it 'returns a 401 unauthorized error' do
-        user = User.create(name: "name_of_user", login: "xyz", role: "user")
+        user = create(:user, role: "user")
         token = Tokenator.encode(user.login)
 
         mentor_1 = create :mentor
