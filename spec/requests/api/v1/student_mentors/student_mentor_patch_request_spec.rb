@@ -7,10 +7,12 @@ describe 'student_mentors API' do
     describe 'as an admin user' do
       it 'patches successfully to /api/v1/student_mentors/:id' do
         user = create(:user, role: "admin")
-        token = Tokenator.encode(user.login)
+        # token = Tokenator.encode(user.login)
 
         student_1 = create(:student)
+        student_2 = create(:student)
         mentor_1 = create(:mentor)
+        mentor_2 = create(:mentor)
 
         id = StudentMentor.create!(student_id: student_1.id, mentor_id: mentor_1.id).id
         previous_student_id = StudentMentor.last.student_id
@@ -18,14 +20,14 @@ describe 'student_mentors API' do
         previous_active = StudentMentor.last.active
 
         payload = {
-          student_id: 1,
-          mentor_id: 2,
+          student_id: student_2.id,
+          mentor_id: mentor_2.id,
           active: false
         }
 
         patch "/api/v1/student_mentors/#{id}", params: {
           student_mentor: payload,
-          token: token
+          # token: token
         }
 
         student_mentor = StudentMentor.find_by_id(id)
