@@ -44,13 +44,13 @@ describe 'student mentor API endpoints' do
         student_mentor_count = StudentMentor.count
         expect(StudentMentor.find(id)).to be_valid
 
-        delete "/api/v1/mentors/#{id}", params: {
+        delete "/api/v1/student_mentors/#{id}", params: {
           #token: token
         }
 
         #expect(response.status).to eq(401)
         new_student_mentor_count = student_mentor_count - 1
-        expect(StudentMentor.count).to eq(student_mentor_count)
+        expect(StudentMentor.count).to eq(new_student_mentor_count)
       end
     end
   end
