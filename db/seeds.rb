@@ -39,7 +39,7 @@ if Rails.env == 'development' || Rails.env == 'production'
     active: true,
     industries: ["Law", "Retail", "Arts", "Teaching", "Marketing/Sales"],
     background: "Toit.",
-    stack: "BE",
+    stack: "Back-End",
     identity_marker: ["Veteran", "Male-identifying"]
   )
 
@@ -52,7 +52,7 @@ if Rails.env == 'development' || Rails.env == 'production'
     active: true,
     industries: ["Law", "Medicine"],
     background: "The worst part is they forgot the comma.",
-    stack: "FE",
+    stack: "Front-End",
     identity_marker: ["Parent", "Female-identifying"]
   )
 
@@ -66,7 +66,7 @@ if Rails.env == 'development' || Rails.env == 'production'
     active: true,
     industries: ["Law", "Teaching"],
     background: "Nutrition bricks. I have original no flavor, and whole wheat no flavor.",
-    stack: "FE",
+    stack: "Front-End",
     identity_marker: ["LGBTQ+"]
   )
 
@@ -84,12 +84,12 @@ if Rails.env == 'development' || Rails.env == 'production'
     current_employer: "BBC",
     industries: ["AdTech", "Green Tech"],
     background: "I am one tough cookie.",
-    ways_to_mentor: ["1-to-1", "resume & cover letter"],
+    ways_to_mentor: ["Mock Interviews", "Coffee Meetings"],
     expertise_tech: ["Data Science", "CSS/SCSS/Sass"],
     expertise_non_tech: ["Public Speaking", "Project Management", "Wellness & Stress Management", "Parenting", "Social Issues in the Tech Industry"],
     mentee_capacity: 10,
     meeting_location: ["Great Britain"],
-    stack_preference: "BE",
+    stack_preference: "Back-End",
     identity_preference: ["Veteran", "Female-identifying"],
     user_id: user_1.id
   )
@@ -108,12 +108,12 @@ if Rails.env == 'development' || Rails.env == 'production'
     current_employer: "BBC",
     industries: ["Civic Tech", "FinTech"],
     background: "Saying what needs to be said.",
-    ways_to_mentor: ["group sessions", "resume & cover letter"],
+    ways_to_mentor: ["Resume & Cover Letters"],
     expertise_tech: ["Vue.js", "Functional Programming", "DevOps", "Ruby/Rails", "Go", "React.js", "Angular.js"],
     expertise_non_tech: ["Parenting", "Culture/Behavioral Interview Prep"],
     mentee_capacity: 5,
     meeting_location: ["Great Britain"],
-    stack_preference: "FE",
+    stack_preference: "Front-End",
     identity_preference: ["Parent"],
     user_id: user_2.id
   )
@@ -131,12 +131,12 @@ if Rails.env == 'development' || Rails.env == 'production'
     current_employer: "BBC",
     industries: ["EdTech", "LegalTech"],
     background: "Keeping the pin rolling.",
-    ways_to_mentor: ["1-to-1", "career coaching"],
+    ways_to_mentor: ["Mock Interviews"],
     expertise_tech: ["GO", "Node.js", "Ember.js" "CSS/SCSS/Sass"],
     expertise_non_tech: ["Wellness & Stress Management"],
     mentee_capacity: 20,
     meeting_location: ["Great Britain"],
-    stack_preference: "FE",
+    stack_preference: "Front-End",
     identity_preference: [],
     user_id: user_3.id
   )
