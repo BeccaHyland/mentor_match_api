@@ -6,10 +6,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :mentors, only: [:create, :index, :show, :update, :destroy]
       resources :students, only: [:create, :index, :show, :update, :destroy]
-
-      resources :mentors do
-        resources :students, controller: 'student_mentors', only: [:create, :index, :show, :update, :destroy]
-      end
+      resources :student_mentors, only: [:create, :index, :show, :update, :destroy]
     end
   end
 end
