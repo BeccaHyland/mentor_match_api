@@ -22,7 +22,7 @@ class Api::V1::StudentMentorsController < ApplicationController
 
   def update
     id = params[:id]
-    StudentMentor.find(id).update(student_mentor_params)
+    StudentMentor.find(id).update!(student_mentor_params)
     render json: StudentMentorSerializer.new(StudentMentor.find(id))
   end
 
