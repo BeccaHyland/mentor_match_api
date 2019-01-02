@@ -1,4 +1,4 @@
-class Authenticator
+#class Authenticator
   # def initialize(connection = Faraday.new)
   #   @connection = connection
   # end
@@ -35,4 +35,4 @@ class Authenticator
   #   raise IOError, 'FETCH_USER_INFO' unless response.success?
   #   JSON.parse(response.body)
   # end
-end
+#end
