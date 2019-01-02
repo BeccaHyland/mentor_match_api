@@ -46,7 +46,7 @@ describe 'mentors API' do
       end
     end
 
-    describe 'as an admin user' do
+    describe 'as a non-admin user' do
       it 'returns a specific mentor from db with LIMITED attributes' do
         user = create(:user, role: "user")
         token = Tokenator.encode(user.login)
