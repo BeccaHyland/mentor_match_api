@@ -1,5 +1,6 @@
 class Api::V1::StudentMentorsController < ApplicationController
-  #before_action :authenticate_user!
+  before_action :authenticate_user!
+  before_action :authorize_admin!
 
   def create
     student_mentor = StudentMentor.new(student_mentor_params)
