@@ -14,7 +14,6 @@ class Api::V1::MentorsController < ApplicationController
       else
         render json: {}, status: 400
       end
-    end
   end
 
   def index
