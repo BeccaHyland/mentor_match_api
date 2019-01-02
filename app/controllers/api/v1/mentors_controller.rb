@@ -55,11 +55,6 @@ class Api::V1::MentorsController < ApplicationController
     @current_user.id == mentor.user.id
   end
 
-  def create_mentor_user
-    #use this method in the CREATE action
-    # get the preferences out of the params and use them for mentor_user join table
-  end
-
   def mentor_params
     params.require(:mentor).permit(:name,
                                   :email,
