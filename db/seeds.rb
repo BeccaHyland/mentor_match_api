@@ -37,10 +37,10 @@ if Rails.env == 'development' || Rails.env == 'production'
     pronouns: "he/him",
     matched: true,
     active: true,
-    industries: ["Law Enforcement"],
+    industries: ["Law", "Retail", "Arts", "Teaching", "Marketing/Sales"],
     background: "Toit.",
     stack: "BE",
-    identity_marker: ["veteran", "male-identifying"]
+    identity_marker: ["Veteran", "Male-identifying"]
   )
 
   student_2 = Student.create!(
@@ -50,10 +50,10 @@ if Rails.env == 'development' || Rails.env == 'production'
     pronouns: "she/her",
     matched: true,
     active: true,
-    industries: ["Law Enforcement"],
+    industries: ["Law", "Medicine"],
     background: "The worst part is they forgot the comma.",
     stack: "FE",
-    identity_marker: ["parent", "female-identifying"]
+    identity_marker: ["Parent", "Female-identifying"]
   )
 
 
@@ -64,7 +64,7 @@ if Rails.env == 'development' || Rails.env == 'production'
     pronouns: "he/him",
     matched: true,
     active: true,
-    industries: ["Leadership","Law Enforcement"],
+    industries: ["Law", "Teaching"],
     background: "Nutrition bricks. I have original no flavor, and whole wheat no flavor.",
     stack: "FE",
     identity_marker: ["LGBTQ+"]
@@ -90,7 +90,7 @@ if Rails.env == 'development' || Rails.env == 'production'
     mentee_capacity: 10,
     meeting_location: ["Great Britain"],
     stack_preference: "BE",
-    identity_preference: ["veteran", "female-identifying"],
+    identity_preference: ["Veteran", "Female-identifying"],
     user_id: user_1.id
   )
 
@@ -114,7 +114,7 @@ if Rails.env == 'development' || Rails.env == 'production'
     mentee_capacity: 5,
     meeting_location: ["Great Britain"],
     stack_preference: "FE",
-    identity_preference: ["parent"],
+    identity_preference: ["Parent"],
     user_id: user_2.id
   )
   mentor_3 = Mentor.create!(
@@ -137,7 +137,7 @@ if Rails.env == 'development' || Rails.env == 'production'
     mentee_capacity: 20,
     meeting_location: ["Great Britain"],
     stack_preference: "FE",
-    identity_preference: ["no preference"],
+    identity_preference: [],
     user_id: user_3.id
   )
 
