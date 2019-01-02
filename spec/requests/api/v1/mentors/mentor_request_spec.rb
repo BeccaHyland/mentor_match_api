@@ -5,7 +5,7 @@ include Tokenator
 describe 'mentors API' do
   describe 'GET /api/v1/mentors/:id' do
     describe 'as an admin user' do
-      it 'returns a specific mentor from db' do
+      it 'returns a specific mentor from db with ALL attributes' do
         user = create(:user, role: "admin")
         token = Tokenator.encode(user.login)
 
@@ -47,7 +47,7 @@ describe 'mentors API' do
     end
 
     describe 'as an admin user' do
-      it 'returns a specific mentor from db' do
+      it 'returns a specific mentor from db with LIMITED attributes' do
         user = create(:user, role: "user")
         token = Tokenator.encode(user.login)
 
