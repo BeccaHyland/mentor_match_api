@@ -8,7 +8,7 @@ class Api::V1::MentorsController < ApplicationController
     #   render json: {}, status: 401
     # else
       mentor = Mentor.new(mentor_params)
-      mentor.user_id = @current_user.id
+      #mentor.user_id = @current_user.id
       if mentor.save
         render json: MentorSerializer.new(mentor), status: 201
       else
@@ -71,6 +71,7 @@ class Api::V1::MentorsController < ApplicationController
                                   :background,
                                   :mentee_capacity,
                                   :stack_preference,
+                                  :user_id,
                                   industries: [],
                                   ways_to_mentor: [],
                                   expertise_tech: [],
