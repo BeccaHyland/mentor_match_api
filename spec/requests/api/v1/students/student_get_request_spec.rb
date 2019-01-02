@@ -23,10 +23,15 @@ describe 'students API' do
       expect(get_response[:data]).to be_a(Object)
 
       expect(get_response[:data][:attributes][:name]).to eq(student_1[:name])
+      expect(get_response[:data][:attributes][:pronouns]).to eq(student_1[:pronouns])
       expect(get_response[:data][:attributes][:email]).to eq(student_1[:email])
       expect(get_response[:data][:attributes][:slack_username]).to eq(student_1[:slack_username])
       expect(get_response[:data][:attributes][:matched]).to eq(student_1[:matched])
       expect(get_response[:data][:attributes][:active]).to eq(student_1[:active])
+      expect(get_response[:data][:attributes][:background]).to eq(student_1[:background])
+      expect(get_response[:data][:attributes][:industries]).to eq(student_1[:industries])
+      expect(get_response[:data][:attributes][:stack]).to eq(student_1[:stack])
+      expect(get_response[:data][:attributes][:identity_marker]).to eq(student_1[:identity_marker])
 
     end
   end
