@@ -1,5 +1,6 @@
 class MentorSerializer
   include FastJsonapi::ObjectSerializer
+  belongs_to :user
   attributes :id,
               :name,
               :email,
