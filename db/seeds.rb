@@ -5,7 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+StudentMentor.destroy_all
 Mentor.destroy_all
+Student.destroy_all
 User.destroy_all
 
 if Rails.env == 'development' || Rails.env == 'production'
@@ -28,7 +30,47 @@ if Rails.env == 'development' || Rails.env == 'production'
     avatar_url: "pic@gh.com"
   )
 
-  mentor1 = Mentor.create!(
+  student_1 = Student.create!(
+    name: "Jake Peralta",
+    email: "jp@gmail.com",
+    slack_username: "jp@slack.com",
+    pronouns: "he/him",
+    matched: true,
+    active: true,
+    industries: ["Law Enforcement"],
+    background: "Toit.",
+    stack: "BE",
+    identity_marker: ["veteran", "male-identifying"]
+  )
+
+  student_2 = Student.create!(
+    name: "Amy Santiago",
+    email: "as@gmail.com",
+    slack_username: "as@slack.com",
+    pronouns: "she/her",
+    matched: true,
+    active: true,
+    industries: ["Law Enforcement"],
+    background: "The worst part is they forgot the comma.",
+    stack: "FE",
+    identity_marker: ["parent", "female-identifying"]
+  )
+
+
+  student_3 = Student.create!(
+    name: "Raymond Holt",
+    email: "rh@gmail.com",
+    slack_username: "rh@slack.com",
+    pronouns: "he/him",
+    matched: true,
+    active: true,
+    industries: ["Leadership","Law Enforcement"],
+    background: "Nutrition bricks. I have original no flavor, and whole wheat no flavor.",
+    stack: "FE",
+    identity_marker: ["LGBTQ+"]
+  )
+
+  mentor_1 = Mentor.create!(
     name: "Mary Berry",
     email: "mb@gmail.com",
     city: "San Francisco",
@@ -52,7 +94,7 @@ if Rails.env == 'development' || Rails.env == 'production'
     user_id: user_1.id
   )
 
-  mentor2 = Mentor.create!(
+  mentor_2 = Mentor.create!(
     name: "Paul Hollywood",
     email: "ph@gmail.com",
     city: "San Francisco",
@@ -75,7 +117,7 @@ if Rails.env == 'development' || Rails.env == 'production'
     identity_preference: ["parent"],
     user_id: user_2.id
   )
-  mentor3 = Mentor.create!(
+  mentor_3 = Mentor.create!(
     name: "Susan Mel",
     email: "sm@gmail.com",
     city: "San Francisco",
@@ -98,6 +140,10 @@ if Rails.env == 'development' || Rails.env == 'production'
     identity_preference: ["no preference"],
     user_id: user_3.id
   )
+
+  student_mentor_1 = StudentMentor.create!(student_id: student_1.id, mentor_id: mentor_2.id)
+  student_mentor_2 = StudentMentor.create!(student_id: student_2.id, mentor_id: mentor_1.id)
+  student_mentor_3 = StudentMentor.create!(student_id: student_3.id, mentor_id: mentor_3.id)
 
   puts "Seeding complete!"
 
