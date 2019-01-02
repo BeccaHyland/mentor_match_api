@@ -6,8 +6,13 @@ class ApplicationController < ActionController::Base
 
   def current_user
     token = params[:token]
-    payload = Tokenator.decode(token)
-    @current_user ||= User.find_by_login(payload[0]['sub'])
+    if token.nil?
+      head :unauthorized
+    else
+      payload = Tokenator.decode(token)
+      @current_user ||= User.find_by_login(payload[0]['sub'])
+    end
+    @current_user
   end
 
   def logged_in?
