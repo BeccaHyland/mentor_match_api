@@ -62,26 +62,26 @@ describe 'mentors API' do
         expect(mentor.stack_preference).to eq(payload[:stack_preference])
       end
 
-      # it 'does not post successfully with missing attributes' do
-      #   user = create(:user)
-      #   #token = Tokenator.encode(user.login)
-      #
-      #   payload = {
-      #     name: "Atreyu",
-      #     email: "never_ending@gmail.com",
-      #     active: true
-      #   }
-      #
-      #   post '/api/v1/mentors', params: {
-      #     mentor: payload #,
-      #   #  token: token
-      #   }
-      #
-      #   mentor = Mentor.last
-      #
-      #   expect(response).to_not be_successful
-      #   expect(response.status).to eq(400)
-      # end
+      it 'does not post successfully with missing attributes' do
+        user = create(:user)
+        #token = Tokenator.encode(user.login)
+
+        payload = {
+          name: "Atreyu",
+          email: "never_ending@gmail.com",
+          active: true
+        }
+
+        post '/api/v1/mentors', params: {
+          mentor: payload #,
+        #  token: token
+        }
+
+        mentor = Mentor.last
+
+        expect(response).to_not be_successful
+        expect(response.status).to eq(400)
+      end
     end
 
     describe 'as an admin user submitting the create mentor form' do
