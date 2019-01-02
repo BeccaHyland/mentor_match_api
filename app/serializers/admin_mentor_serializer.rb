@@ -1,5 +1,6 @@
-class MentorSerializer
+class AdminMentorSerializer
   include FastJsonapi::ObjectSerializer
+  set_type :mentor
   attributes :id,
               :name,
               :email,
@@ -17,7 +18,8 @@ class MentorSerializer
               :ways_to_mentor,
               :expertise_tech,
               :expertise_non_tech,
+              :mentee_capacity,
               :meeting_location,
-              :stack_preference
-  #mentee_capacity and identity_preference only visible from AdminMentorSerializer
+              :stack_preference,
+              :identity_preference
 end

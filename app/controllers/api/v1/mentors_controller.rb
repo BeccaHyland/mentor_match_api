@@ -17,12 +17,20 @@ class Api::V1::MentorsController < ApplicationController
   end
 
   def index
-    render json: MentorSerializer.new(Mentor.all)
+    if admin_user?
+      render json: AdminMentorSerializer.new(Mentor.all)
+    else
+      render json: MentorSerializer.new(Mentor.all)
+    end
   end
 
   def show
     id = params[:id]
-    render json: MentorSerializer.new(Mentor.find(id))
+    if admin_user?
+      render json: AdminMentorSerializer.new(Mentor.find(id))
+    else
+      render json: MentorSerializer.new(Mentor.find(id))
+    end
   end
 
   def update
