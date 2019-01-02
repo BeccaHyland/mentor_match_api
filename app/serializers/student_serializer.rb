@@ -9,5 +9,6 @@ class StudentSerializer
                 :stack,
                 :slack_username,
                 :background,
-                :industries
+                :industries,
+                :identity_marker
 end
