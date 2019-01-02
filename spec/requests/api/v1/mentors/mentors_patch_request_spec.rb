@@ -40,7 +40,7 @@ describe 'mentors API' do
 
     describe 'as a non-admin user whose id matches the request' do
       it 'patches successfully to /api/v1/mentors/:id' do
-        user = User.create(name: "name_of_user", login: "xyz", role: "user")
+        user = create(:user)
         token = Tokenator.encode(user.login)
 
         extra_mentor_to_throw_off_id_count_within_test = create(:mentor)

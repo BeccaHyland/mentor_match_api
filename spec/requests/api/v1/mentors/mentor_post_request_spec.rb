@@ -62,7 +62,7 @@ describe 'mentors API' do
       end
 
       it 'does not post successfully with missing attributes' do
-        user = User.create(name: "name_of_user", login: "xyz")
+        user = create(:user)
         token = Tokenator.encode(user.login)
 
         payload = {
@@ -83,8 +83,8 @@ describe 'mentors API' do
       end
     end
 
-    describe 'as a non-admin user entering my info to become a mentor' do
-      it 'posts successfully to the db' do
+    describe 'as an admin user submitting the create mentor form' do
+      it 'does not post successfully to the db' do
         user = create(:user, role: "admin")
         token = Tokenator.encode(user.login)
 

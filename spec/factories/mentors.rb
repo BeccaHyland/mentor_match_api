@@ -18,7 +18,7 @@ FactoryBot.define do
     stack_preference { [] }
     identity_preference { [] }
     mentee_capacity { 1 }
-    meeting_location {""}
+    meeting_location { [] }
     country {""}
   end
 end

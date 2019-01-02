@@ -52,25 +52,4 @@ RSpec.describe Mentor, type: :model do
       expect(mentor.active).to eq(true)
     end
   end
-
-  # it 'cannot have a duplicate email' do
-  #     attributes_user_1 = {
-  #       "name" => "Brandi",
-  #       "email" => "b@gmail.com",
-  #       "city" => "Denver",
-  #       "state" => "CO",
-  #       "slack_username" => "brandi@slack.com",
-  #     }
-  #
-  #     attributes_user_2 = {
-  #       "name" => "Susan",
-  #       "email" => "b@gmail.com",
-  #       "city" => "Denver",
-  #       "state" => "CO",
-  #       "slack_username" => "brandi@slack.com",
-  #     }
-  #
-  #     mentor_1 = Mentor.create(attributes_user_1)
-  #     mentor_2 = Mentor.create(attributes_user_2)
-  # end
 end
