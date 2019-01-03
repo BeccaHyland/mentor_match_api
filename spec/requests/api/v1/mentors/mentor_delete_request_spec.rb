@@ -7,7 +7,7 @@ describe 'mentor API endpoints' do
     describe 'as an admin user' do
       it 'deletes a specific mentor from db' do
         user = create(:user, role: "admin")
-        #token = Tokenator.encode(user.login)
+        token = Tokenator.encode(user.login)
 
         mentor_1 = create :mentor
 
@@ -16,7 +16,7 @@ describe 'mentor API endpoints' do
         expect(Mentor.find(id)).to be_valid
 
         delete "/api/v1/mentors/#{id}", params: {
-        #  token: token
+         token: token
         }
 
         expect(response.status).to eq(204)
@@ -28,7 +28,7 @@ describe 'mentor API endpoints' do
     describe 'as a non-admin user' do
       it 'returns a 401 unauthorized error' do
         user = create(:user, role: "user")
-        #token = Tokenator.encode(user.login)
+        token = Tokenator.encode(user.login)
 
         mentor_1 = create :mentor
 
@@ -37,12 +37,12 @@ describe 'mentor API endpoints' do
         expect(Mentor.find(id)).to be_valid
 
         delete "/api/v1/mentors/#{id}", params: {
-        #  token: token
+         token: token
         }
 
-        # expect(response.status).to eq(401)
-        # new_mentor_count = mentor_count - 1
-        # expect(Mentor.count).to eq(mentor_count)
+        expect(response.status).to eq(401)
+        new_mentor_count = mentor_count - 1
+        expect(Mentor.count).to eq(mentor_count)
       end
     end
   end

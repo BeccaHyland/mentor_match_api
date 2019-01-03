@@ -7,7 +7,7 @@ describe 'student mentor API endpoints' do
     describe 'as an admin user' do
       it 'deletes a specific student mentor from db' do
         user = create(:user, role: "admin")
-      #  token = Tokenator.encode(user.login)
+       token = Tokenator.encode(user.login)
       students = create_list(:student, 4)
       mentors = create_list(:mentor, 2)
 
@@ -21,7 +21,7 @@ describe 'student mentor API endpoints' do
         expect(StudentMentor.find(id)).to be_valid
 
         delete "/api/v1/student_mentors/#{id}", params: {
-          #token: token
+          token: token
         }
 
         expect(response.status).to eq(204)
@@ -45,10 +45,10 @@ describe 'student mentor API endpoints' do
         expect(StudentMentor.find(id)).to be_valid
 
         delete "/api/v1/student_mentors/#{id}", params: {
-          #token: token
+          token: token
         }
 
-        #expect(response.status).to eq(401)
+        expect(response.status).to eq(401)
         new_student_mentor_count = student_mentor_count - 1
         expect(StudentMentor.count).to eq(new_student_mentor_count)
       end

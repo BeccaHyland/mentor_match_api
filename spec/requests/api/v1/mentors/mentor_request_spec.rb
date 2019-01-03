@@ -7,7 +7,7 @@ describe 'mentors API' do
     describe 'as an admin user' do
       it 'returns a specific mentor from db with ALL attributes' do
         user = create(:user, role: "admin")
-        #token = Tokenator.encode(user.login)
+        token = Tokenator.encode(user.login)
 
         mentor_1 = create(:mentor)
         mentor_2 = create(:mentor)
@@ -15,7 +15,7 @@ describe 'mentors API' do
         id = mentor_1.id
 
         get "/api/v1/mentors/#{id}", params: {
-        #  token: token
+         token: token
         }
 
         expect(response.status).to eq(200)
@@ -49,7 +49,7 @@ describe 'mentors API' do
     describe 'as a non-admin user user id does NOT match requested mentor user_id' do
       it 'returns a specific mentor from db with LIMITED attributes' do
         user = create(:user, role: "user")
-        #token = Tokenator.encode(user.login)
+        token = Tokenator.encode(user.login)
 
         mentor_1 = create(:mentor)
         mentor_2 = create(:mentor)
@@ -57,7 +57,7 @@ describe 'mentors API' do
         id = mentor_1.id
 
         get "/api/v1/mentors/#{id}", params: {
-        #  token: token
+         token: token
         }
 
         expect(response.status).to eq(200)
@@ -65,8 +65,8 @@ describe 'mentors API' do
         get_response = JSON.parse(response.body, symbolize_names: true)
         expect(get_response[:data]).to be_a(Object)
 
-        # expect(get_response[:data][:attributes][:identity_preference]).to eq(nil)
-        # expect(get_response[:data][:attributes][:mentee_capacity]).to eq(nil)
+        expect(get_response[:data][:attributes][:identity_preference]).to eq(nil)
+        expect(get_response[:data][:attributes][:mentee_capacity]).to eq(nil)
 
         expect(get_response[:data][:attributes][:name]).to eq(mentor_1[:name])
         expect(get_response[:data][:attributes][:email]).to eq(mentor_1[:email])
@@ -92,7 +92,7 @@ describe 'mentors API' do
     describe 'as a non-admin user where user id matches requested mentor user_id' do
       it 'returns a specific mentor from db with ALL attributes' do
         user = create(:user, role: "user")
-        #token = Tokenator.encode(user.login)
+        token = Tokenator.encode(user.login)
 
         mentor_1 = create(:mentor, user_id: user.id)
         mentor_2 = create(:mentor)
@@ -100,7 +100,7 @@ describe 'mentors API' do
         id = mentor_1.id
 
         get "/api/v1/mentors/#{id}", params: {
-        #  token: token
+         token: token
         }
 
         expect(response.status).to eq(200)
