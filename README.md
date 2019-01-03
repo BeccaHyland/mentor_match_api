@@ -148,6 +148,8 @@ within the spec_helper RSpec configure:
 
 ## Schema Design
 
+<img width="1438" alt="screen shot 2019-01-02 at 6 30 11 pm" src="https://user-images.githubusercontent.com/39714935/50665860-7fb70c80-0f6f-11e9-8956-0c36cafdaa38.png">
+
 ## Tech Stack List
 * Ruby 2.4.1
 * Ruby on Rails 5.1
