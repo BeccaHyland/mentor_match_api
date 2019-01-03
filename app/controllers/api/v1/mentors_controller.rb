@@ -51,10 +51,10 @@ class Api::V1::MentorsController < ApplicationController
 
   private
 
-  def request_matches_user?
-    mentor = Mentor.find(params[:id].to_i)
-    @current_user.id == mentor.user.id
-  end
+  # def request_matches_user?
+  #   mentor = Mentor.find(params[:id].to_i)
+  #   @current_user.id == mentor.user.id
+  # end
 
   def mentor_params
     params.require(:mentor).permit(:name,
