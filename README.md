@@ -14,10 +14,10 @@ In this repo, you will find the code and documentation for the Mentor Match back
 
 ## Initial Setup
 Run locally:
-Clone the repo found here: (https://github.com/BeccaHyland/mentor_match_api)
-run `bundle` from the CLI.
-run `rails s`
-navigate to the endpoint of your choice.  See below.
+1. Clone the repo found here: (https://github.com/BeccaHyland/mentor_match_api)
+2. Run `bundle` from the CLI.
+3. Run `rails s`
+4. Using `localhost:3000` as the base of your url in browser, add the endpoint of your choice.  See below.
 
 ## API Endpoints
 This is documentation for the prototype endpoints which will be deprecated shortly. Visit [here](https://github.com/BeccaHyland/mentor_match_api/blob/master/README_endpoints.md) for up-to-date endpoint documentation.
@@ -46,7 +46,7 @@ POST `/api/v1/mentors`
 
 #### BODY:
 * JSON
-* A sucessful post returns `status: 201` and returns the `new mentor`
+* A sucessful post returns `status: 201` and returns the new mentor.
 * The minimum required fields to create a mentor are: name, city, and email.
 `{
 "name": "name of mentor",
@@ -101,7 +101,7 @@ POST `/api/v1/mentors`
 
 #### BODY:
   * JSON
-  * A sucessful post returns `status: 201` and returns the `new student`
+  * A sucessful post returns `status: 201` and returns the new student.
   * The minimum required fields to create a student are: name and email where the email must be unique.
   `{
   "name": "name of student",
@@ -140,7 +140,7 @@ POST `/api/v1/mentors`
 
 #### BODY:
   * JSON
-  * A sucessful post returns `status: 201` and returns the `new student mentor relationship`
+  * A sucessful post returns `status: 201` and returns the new student mentor relationship.
   * The minimum required fields to create a student are: student_id and mentor_id where the a student and mentor must exist.
   `{
   "student_id": "student_id as an integer",
@@ -218,11 +218,11 @@ within the spec_helper RSpec configure:
 
 
 ## Known Issues
-Integration with OAuth and JWT is forthcoming.
+Integration with OAuth and JWT is in development.
 
 ## Running Tests
-Run `rspec spec` from the CLI to run all tests.
-Run `rspec` then the filepath of the
+Run `rspec` from the CLI to run all tests.
+Run `rspec` then the filepath of the test you wish to run.
 
 ## How to Contribute
 Drop a line to the creators, or add a Pull Request on GitHub.
@@ -241,5 +241,5 @@ Tim Fielder
 * Ruby 2.4.1
 * Ruby on Rails 5.1
 * Postgresql
-* Oauth
-* JWT Tokens
+* OAuth
+* JSON Web Tokens
