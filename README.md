@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/BeccaHyland/mentor_match_api.svg?branch=master)](https://travis-ci.com/BeccaHyland/mentor_match_api)
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/BeccaHyland/mentor_match_api.svg?columns=all)](https://waffle.io/BeccaHyland/mentor_match_api)
 
 # Mentor Match (API)
