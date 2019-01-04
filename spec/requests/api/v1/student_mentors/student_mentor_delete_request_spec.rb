@@ -49,7 +49,7 @@ describe 'student mentor API endpoints' do
         }
 
         expect(response.status).to eq(401)
-        new_student_mentor_count = student_mentor_count - 1
+        new_student_mentor_count = student_mentor_count
         expect(StudentMentor.count).to eq(new_student_mentor_count)
       end
     end

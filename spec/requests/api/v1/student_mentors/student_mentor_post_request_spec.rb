@@ -4,9 +4,9 @@ include Tokenator
 
 describe 'student mentors API' do
   describe 'POST /api/v1/student_mentors/' do
-    describe 'as a non-admin user entering my info to become a mentor' do
+    describe 'as an admin user matching a student to a mentor' do
       it 'posts successfully to the db' do
-        user = create(:user)
+        user = create(:user, role: "admin")
         token = Tokenator.encode(user.login)
         mentor_1 = create(:mentor)
         student_1 = create(:student)
@@ -32,8 +32,8 @@ describe 'student mentors API' do
       end
 
       it 'does not post successfully with missing attributes' do
-        user = create(:user)
-       token = Tokenator.encode(user.login)
+        user = create(:user, role: "admin")
+        token = Tokenator.encode(user.login)
 
         mentor_1 = create(:mentor)
         student_1 = create(:student)
@@ -44,7 +44,7 @@ describe 'student mentors API' do
 
         post '/api/v1/student_mentors', params: {
           student_mentor: payload,
-         token: token
+          token: token
         }
 
         student_mentor = StudentMentor.last
@@ -54,9 +54,9 @@ describe 'student mentors API' do
       end
     end
 
-    describe 'as an admin user submitting the create mentor form' do
-      it 'does not post successfully to the db' do
-        user = create(:user, role: "admin")
+    describe 'as a non-admin user matching a student to a mentor' do
+      it 'returns a 401' do
+        user = create(:user)
         token = Tokenator.encode(user.login)
         mentor_1 = create(:mentor)
         student_1 = create(:student)
@@ -68,7 +68,7 @@ describe 'student mentors API' do
 
         post '/api/v1/student_mentors', params: {
           student_mentor: payload,
-         token: token
+          token: token
         }
 
         expect(response.status).to eq(401)

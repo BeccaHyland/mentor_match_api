@@ -4,7 +4,7 @@ class Api::V1::MentorsController < ApplicationController
   before_action :authorize_admin!, only: :destroy
 
   def create
-    # if admin_user?
+    if admin_user?
       render json: {}, status: 401
     else
       mentor = Mentor.new(mentor_params)
