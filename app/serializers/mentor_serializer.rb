@@ -1,3 +1,5 @@
+require 'pry'
+
 class MentorSerializer
   include FastJsonapi::ObjectSerializer
   belongs_to :user
@@ -20,5 +22,8 @@ class MentorSerializer
               :expertise_non_tech,
               :meeting_location,
               :stack_preference
-  #mentee_capacity and identity_preference only visible from AdminMentorSerializer
+              #mentee_capacity and identity_preference only visible from AdminMentorSerializer
+  attribute :avatar_url do |object|
+    object.user.avatar_url
+  end
 end
