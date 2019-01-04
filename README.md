@@ -62,7 +62,8 @@ POST `/api/v1/mentors`
 `{
 "name": "name of mentor",
 "email": "email of mentor",
-"city": "city of mentor"
+"city": "city of mentor", 
+"user_id": "associated user_id"
 }`
 
 * the database already stores defaults for the attributes `active` and `matched`, so these are NOT included with a POST.
@@ -87,7 +88,8 @@ POST `/api/v1/mentors`
             "expertise_non_tech": ["rock-climbing", "parenting", "cooking"], <br>
             "mentee_capacity": 1, *(this is an integer)* <br>
             "meeting_location": ["remote"], <br>
-            "preferences": ["parent", "female-identifying", "FE"] <br>
+            "preferences": ["parent", "female-identifying", "FE"], <br>
+            "user_id": 2 *(this is an integer)*<br>
 }<br>
 
 ### 4. Update a mentor in the database
