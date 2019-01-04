@@ -114,13 +114,13 @@ DELETE `/api/v1/mentors/(:mentor_id)`
 ## <a name="student-endpoints"></a>Student Endpoints
 ### 1.  All students in the database:
   GET `/api/v1/students`
-  * returns JSON in the following format:
-  ![screen shot 2019-01-03 at 1 22 05 pm](https://user-images.githubusercontent.com/38568909/50660069-bedb6280-0f5b-11e9-904b-0425dd9b9c50.png)
+  * returns JSON in the following format:<br>
+  ![screen shot 2019-01-03 at 1 22 05 pm](https://user-images.githubusercontent.com/38568909/50660069-bedb6280-0f5b-11e9-904b-0425dd9b9c50.png)<br>
 
 ### 2. One student by its id
   GET `/api/v1/students/INSERT ID HERE`
-  * returns JSON in the following format:
-  ![screen shot 2019-01-03 at 1 22 35 pm](https://user-images.githubusercontent.com/38568909/50660094-d581b980-0f5b-11e9-9701-0825b6727d3e.png)
+  * returns JSON in the following format:<br>
+  ![screen shot 2019-01-03 at 1 22 35 pm](https://user-images.githubusercontent.com/38568909/50660094-d581b980-0f5b-11e9-9701-0825b6727d3e.png)<br>
 
 ### 3. Create a new student in the database
   POST `/api/v1/students`
@@ -147,8 +147,8 @@ DELETE `/api/v1/mentors/(:mentor_id)`
   }`
 
   * the database stores defaults for the attributes `"matched": "false"` , `"active": "true"` , `"industries": []` , `"identity_marker": []`.
-  * full example:
-  ![screen shot 2019-01-03 at 1 23 47 pm](https://user-images.githubusercontent.com/38568909/50660040-a9fecf00-0f5b-11e9-8642-497d6fb2c1fa.png)
+  * full example:<br>
+  ![screen shot 2019-01-03 at 1 23 47 pm](https://user-images.githubusercontent.com/38568909/50660040-a9fecf00-0f5b-11e9-8642-497d6fb2c1fa.png)<br>
 
 ### 4. Update a student in the database
 PATCH/PUT `/api/v1/students/(:student_id)`
@@ -174,13 +174,13 @@ DELETE `/api/v1/students/(:student_id)`
 ## <a name="student-mentor-endpoints"></a>StudentMentor Endpoints
 ### 1.  All student mentor relationships in the database:
   GET `/api/v1/student_mentors`
-  * returns JSON in the following format:
-  ![screen shot 2019-01-03 at 1 40 17 pm](https://user-images.githubusercontent.com/38568909/50660486-247c1e80-0f5d-11e9-8e46-84116a542cba.png)
+  * returns JSON in the following format:<br>
+  ![screen shot 2019-01-03 at 1 40 17 pm](https://user-images.githubusercontent.com/38568909/50660486-247c1e80-0f5d-11e9-8e46-84116a542cba.png)<br>
 
 ### 2. One student mentor relationship in the database by its id:
   GET `/api/v1/student_mentors/INSERT ID HERE`
-  * returns JSON in the following format:
-  ![screen shot 2019-01-03 at 1 41 08 pm](https://user-images.githubusercontent.com/38568909/50660517-3eb5fc80-0f5d-11e9-8055-d7b5fddf0404.png)
+  * returns JSON in the following format:<br>
+  ![screen shot 2019-01-03 at 1 41 08 pm](https://user-images.githubusercontent.com/38568909/50660517-3eb5fc80-0f5d-11e9-8055-d7b5fddf0404.png)<br>
 
 ### 3. Create a new student mentor in the database:
   POST `/api/v1/student_mentors`
@@ -202,8 +202,8 @@ DELETE `/api/v1/students/(:student_id)`
   }`
 
   * the database stores defaults for the attributes `"active": "true"`.
-  * full example:
-  ![screen shot 2019-01-03 at 1 43 11 pm](https://user-images.githubusercontent.com/38568909/50660594-92284a80-0f5d-11e9-8d16-4c21b8a97a77.png)
+  * full example:<br>
+  ![screen shot 2019-01-03 at 1 43 11 pm](https://user-images.githubusercontent.com/38568909/50660594-92284a80-0f5d-11e9-8d16-4c21b8a97a77.png)<br>
 
 ### 4. Update a student mentor in the database
 PATCH/PUT `/api/v1/student_mentors/(:student_mentor_id)`
