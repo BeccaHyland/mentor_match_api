@@ -23,7 +23,8 @@ describe 'mentors API' do
         get_response = JSON.parse(response.body, symbolize_names: true)
         expect(get_response[:data]).to be_a(Object)
 
-        expect(get_response[:data][:attributes][:name]).to eq(mentor_1[:name])
+        expect(get_response[:data][:attributes][:avatar_url]).to eq(user[:avatar_url])
+
         expect(get_response[:data][:attributes][:email]).to eq(mentor_1[:email])
         expect(get_response[:data][:attributes][:city]).to eq(mentor_1[:city])
         expect(get_response[:data][:attributes][:state]).to eq(mentor_1[:state])
@@ -64,6 +65,8 @@ describe 'mentors API' do
 
         get_response = JSON.parse(response.body, symbolize_names: true)
         expect(get_response[:data]).to be_a(Object)
+
+        expect(get_response[:data][:attributes][:avatar_url]).to eq(user[:avatar_url])
 
         # expect(get_response[:data][:attributes][:identity_preference]).to eq(nil)
         # expect(get_response[:data][:attributes][:mentee_capacity]).to eq(nil)
@@ -107,6 +110,8 @@ describe 'mentors API' do
 
         get_response = JSON.parse(response.body, symbolize_names: true)
         expect(get_response[:data]).to be_a(Object)
+
+        expect(get_response[:data][:attributes][:avatar_url]).to eq(user[:avatar_url])
 
         expect(get_response[:data][:attributes][:identity_preference]).to eq(mentor_1[:identity_preference])
         expect(get_response[:data][:attributes][:mentee_capacity]).to eq(mentor_1[:mentee_capacity])
