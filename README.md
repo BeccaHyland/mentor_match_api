@@ -4,7 +4,16 @@
 
 # Mentor Match (API)
 
-## Table of Contents
+## Introduction
+  Mentor Match is an app for internal staff and student use at Turing School of Software & Design. In Module 1, Turing students have the opportunity to be matched to a software development mentor, usually an alumni, so this app gives admin tools to manage the matching process.
+
+ In later Modules, students also contact alumni for short-term mentoring as a part of students' Professional Devlelopment curriculum, such as mock interviews and individual coffee meetings. Students can log in to the app to search for mentors in areas of interest and to connect.
+
+In this repo, you will find the code and documentation for the Mentor Match back end, which provides the database and API endpoints for the Mentor Match Project and is deployed at https://mentor-match-api.herokuapp.com/
+
+ Mentor Match is also deployed to a staging environment.
+ 
+ ## Table of Contents
 * [Initial Setup](#initial-setup)
 * [Mentor Endpoints](#mentor-endpoints)
 * [Student Endpoints](#student-endpoints)
@@ -13,16 +22,7 @@
 * [Known Issues](#known-issues)
 * [Schema Design](#schema-design)
 
-## <a name="initial-setup"></a>Introduction
-  Mentor Match is an app for internal staff and student use at Turing School of Software & Design. In Module 1, Turing students have the opportunity to be matched to a software development mentor, usually an alumni, so this app gives admin tools to manage the matching process.
-
- In later Modules, students also contact alumni for short-term mentoring as a part of students' Professional Devlelopment curriculum, such as mock interviews and individual coffee meetings. Students can log in to the app to search for mentors in areas of interest and to connect.
-
-In this repo, you will find the code and documentation for the Mentor Match back end, which provides the database and API endpoints for the Mentor Match Project and is deployed at https://mentor-match-api.herokuapp.com/
-
- Mentor Match is also deployed to a staging environment.
-
-## Initial Setup
+## <a name="initial-setup"></a>Initial Setup
 Run locally:
 1. Clone the repo found here: (https://github.com/BeccaHyland/mentor_match_api)
 2. Run `bundle` from the CLI.
