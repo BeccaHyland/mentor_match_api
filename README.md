@@ -1,3 +1,4 @@
+![screen shot 2019-01-03 at 6 35 26 pm](https://user-images.githubusercontent.com/39714935/50670098-6bcad500-0f86-11e9-862e-457c5a122a1d.png)
 [![Build Status](https://travis-ci.com/BeccaHyland/mentor_match_api.svg?branch=master)](https://travis-ci.com/BeccaHyland/mentor_match_api)
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/BeccaHyland/mentor_match_api.svg?columns=all)](https://waffle.io/BeccaHyland/mentor_match_api)
 
