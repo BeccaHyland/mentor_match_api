@@ -79,6 +79,27 @@ POST `/api/v1/mentors`
             "preferences": ["parent", "female-identifying", "FE"] <br>
 }<br>
 
+### 4. Update a mentor in the database
+PATCH/PUT `/api/v1/mentors/(:mentor_id)`
+* request must include:
+#### HEADERS:
+`{
+"Content-Type": "application/json",
+"Accept": "application/json"
+}`
+
+#### BODY:
+The body of a patch/put request may resemble a POST request.
+
+### 5. Delete a mentor from the database
+DELETE `/api/v1/mentors/(:mentor_id)`
+* request must include:
+#### HEADERS:
+`{
+"Content-Type": "application/json",
+"Accept": "application/json"
+}`
+
 ## Student Endpoints
 ### 1.  All students in the database:
   GET `/api/v1/students`
@@ -118,6 +139,27 @@ POST `/api/v1/mentors`
   * full example:
   ![screen shot 2019-01-03 at 1 23 47 pm](https://user-images.githubusercontent.com/38568909/50660040-a9fecf00-0f5b-11e9-8642-497d6fb2c1fa.png)
 
+### 4. Update a student in the database
+PATCH/PUT `/api/v1/students/(:student_id)`
+* request must include:
+#### HEADERS:
+`{
+"Content-Type": "application/json",
+"Accept": "application/json"
+}`
+
+#### BODY:
+The body of a patch/put request may resemble a POST request.
+
+### 5. Delete a student from the database
+DELETE `/api/v1/students/(:student_id)`
+* request must include:
+#### HEADERS:
+`{
+"Content-Type": "application/json",
+"Accept": "application/json"
+}`
+
 ## Student Mentor Endpoints
 ### 1.  All student mentor relationships in the database:
   GET `/api/v1/student_mentors`
@@ -152,6 +194,26 @@ POST `/api/v1/mentors`
   * full example:
   ![screen shot 2019-01-03 at 1 43 11 pm](https://user-images.githubusercontent.com/38568909/50660594-92284a80-0f5d-11e9-8d16-4c21b8a97a77.png)
 
+### 4. Update a student mentor in the database
+PATCH/PUT `/api/v1/student_mentors/(:student_mentor_id)`
+* request must include:
+#### HEADERS:
+`{
+"Content-Type": "application/json",
+"Accept": "application/json"
+}`
+
+#### BODY:
+The body of a patch/put request may resemble a POST request.
+
+### 5. Delete a student mentor from the database
+DELETE `/api/v1/student_mentors/(:student_mentor_id)`
+* request must include:
+#### HEADERS:
+`{
+"Content-Type": "application/json",
+"Accept": "application/json"
+}`
 
 
 ### Build Details: *(draft collection of all details, to be formatted)*
