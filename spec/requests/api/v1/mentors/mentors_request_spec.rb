@@ -5,7 +5,7 @@ include Tokenator
 describe 'mentors API' do
   describe 'GET /api/v1/mentors' do
     describe 'as an admin user with a token' do
-      it 'returns all mentors in db, each with ALL attributes' do
+      it 'is not the correct endpoint for admin, returns limited attributes' do
         user = create(:user, role: "admin")
         token = Tokenator.encode(user.login)
 
@@ -22,6 +22,9 @@ describe 'mentors API' do
 
         expect(get_response[:data]).to be_an(Array)
         expect(get_response[:data].length).to eq(2)
+
+        expect(get_response[:data].first[:attributes][:identity_preference]).to eq(nil)
+        expect(get_response[:data].first[:attributes][:mentee_capacity]).to eq(nil)
 
         expect(get_response[:data].first[:attributes][:name]).to eq(mentor_1[:name])
         expect(get_response[:data].first[:attributes][:email]).to eq(mentor_1[:email])
@@ -41,16 +44,14 @@ describe 'mentors API' do
         expect(get_response[:data].first[:attributes][:expertise_tech]).to eq(mentor_1[:expertise_tech])
         expect(get_response[:data].first[:attributes][:expertise_non_tech]).to eq(mentor_1[:expertise_non_tech])
         expect(get_response[:data].first[:attributes][:stack_preference]).to eq(mentor_1[:stack_preference])
-        expect(get_response[:data].first[:attributes][:identity_preference]).to eq(mentor_1[:identity_preference])
-        expect(get_response[:data].first[:attributes][:mentee_capacity]).to eq(mentor_1[:mentee_capacity])
 
         expect(get_response[:data].second[:attributes][:name]).to eq(mentor_2[:name])
       end
     end
 
-    describe 'as an admin user without a token' do
+    describe 'as user without a token' do
       it 'returns a 401' do
-        user = create(:user, role: "admin")
+        user = create(:user)
 
         mentor_1 = create(:mentor)
         mentor_2 = create(:mentor)
