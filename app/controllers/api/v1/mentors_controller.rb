@@ -35,10 +35,10 @@ class Api::V1::MentorsController < ApplicationController
   end
 
   def update
-    if admin_user? || request_matches_user?
+    if request_matches_user?
       id = params[:id]
       Mentor.find(id).update(mentor_params)
-      render json: MentorSerializer.new(Mentor.find(id))
+      render json: AdminMentorSerializer.new(Mentor.find(id))
     else
       head :unauthorized
     end
