@@ -9,6 +9,10 @@ Rails.application.routes.draw do
       resources :mentors, only: [:create, :index, :show, :update, :destroy]
       resources :students, only: [:create, :index, :show, :update, :destroy]
       resources :student_mentors, only: [:create, :index, :show, :update, :destroy]
+
+      namespace :admin do
+        resources :mentors, only: [:create, :index, :show, :update, :destroy]
+      end
     end
   end
 end
