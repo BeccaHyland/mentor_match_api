@@ -1,7 +1,5 @@
 class Api::V1::MentorsController < ApplicationController
-
   before_action :authenticate_user!
-  before_action :authorize_admin!, only: :destroy
 
   def create
     if admin_user?
@@ -18,16 +16,12 @@ class Api::V1::MentorsController < ApplicationController
   end
 
   def index
-    if admin_user?
-      render json: AdminMentorSerializer.new(Mentor.all)
-    else
-      render json: MentorSerializer.new(Mentor.all)
-    end
+    render json: MentorSerializer.new(Mentor.all)
   end
 
   def show
     id = params[:id]
-    if admin_user? || request_matches_user?
+    if request_matches_user?
       render json: AdminMentorSerializer.new(Mentor.find(id))
     else
       render json: MentorSerializer.new(Mentor.find(id))
@@ -42,11 +36,6 @@ class Api::V1::MentorsController < ApplicationController
     else
       head :unauthorized
     end
-  end
-
-  def destroy
-    id = params[:id]
-    Mentor.find(id).delete
   end
 
   private

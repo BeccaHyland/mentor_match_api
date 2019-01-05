@@ -17,6 +17,11 @@ class Api::V1::Admin::MentorsController < ApplicationController
     render json: MentorSerializer.new(Mentor.find(id))
   end
 
+  def destroy
+    id = params[:id]
+    Mentor.find(id).delete
+  end
+
   private
 
   def mentor_params

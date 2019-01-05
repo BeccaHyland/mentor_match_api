@@ -3,7 +3,7 @@ require './lib/tokenator.rb'
 include Tokenator
 
 describe 'mentor API endpoints' do
-  describe 'DELETE request to /api/v1/mentors/:id' do
+  describe 'DELETE request to /api/v1/admin/mentors/:id' do
     describe 'as an admin user' do
       it 'deletes a specific mentor from db' do
         user = create(:user, role: "admin")
@@ -15,7 +15,7 @@ describe 'mentor API endpoints' do
         mentor_count = Mentor.count
         expect(Mentor.find(id)).to be_valid
 
-        delete "/api/v1/mentors/#{id}", params: {
+        delete "/api/v1/admin/mentors/#{id}", params: {
          token: token
         }
 
@@ -36,7 +36,7 @@ describe 'mentor API endpoints' do
         mentor_count = Mentor.count
         expect(Mentor.find(id)).to be_valid
 
-        delete "/api/v1/mentors/#{id}", params: {
+        delete "/api/v1/admin/mentors/#{id}", params: {
          token: token
         }
 
