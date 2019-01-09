@@ -71,7 +71,7 @@ class Api::V1::MentorsController < ApplicationController
                                   :background,
                                   :mentee_capacity,
                                   :stack_preference,
-                                  :user_id,
+                                  # :user_id,
                                   industries: [],
                                   ways_to_mentor: [],
                                   expertise_tech: [],
