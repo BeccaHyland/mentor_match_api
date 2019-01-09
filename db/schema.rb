@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_01_175851) do
+ActiveRecord::Schema.define(version: 2018_12_31_223655) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,8 +38,6 @@ ActiveRecord::Schema.define(version: 2019_01_01_175851) do
     t.string "stack_preference", default: "no preference"
     t.string "identity_preference", default: [], array: true
     t.string "meeting_location", default: [], array: true
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_mentors_on_user_id"
   end
 
   create_table "student_mentors", force: :cascade do |t|
@@ -76,7 +74,6 @@ ActiveRecord::Schema.define(version: 2019_01_01_175851) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "mentors", "users"
   add_foreign_key "student_mentors", "mentors"
   add_foreign_key "student_mentors", "students"
 end
