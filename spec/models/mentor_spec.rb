@@ -9,7 +9,7 @@ RSpec.describe Mentor, type: :model do
   end
 
   describe 'associations' do
-    it {should belong_to(:user)}
+    # it {should belong_to(:user)}
   end
 
   describe 'model tests' do

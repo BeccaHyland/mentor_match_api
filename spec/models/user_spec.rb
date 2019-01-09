@@ -9,6 +9,6 @@ RSpec.describe User, type: :model do
   end
 
   describe 'associations' do
-    it {should have_one(:mentor)}
+    # it {should have_one(:mentor)}
   end
 end

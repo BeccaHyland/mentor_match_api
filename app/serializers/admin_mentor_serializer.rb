@@ -1,7 +1,7 @@
 class AdminMentorSerializer
   include FastJsonapi::ObjectSerializer
   set_type :mentor
-  belongs_to :user
+  # belongs_to :user
   attributes :id,
               :name,
               :email,
