@@ -3,5 +3,5 @@ class User < ApplicationRecord
                         :role
   validates :login, uniqueness: true, presence: true
 
-  has_one :mentor
+  # has_one :mentor
 end
