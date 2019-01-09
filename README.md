@@ -12,7 +12,7 @@
 In this repo, you will find the code and documentation for the Mentor Match back end, which provides the database and API endpoints for the Mentor Match Project and is deployed at https://mentor-match-api.herokuapp.com/
 
  Mentor Match is also deployed to a staging environment.
- 
+
  ## Table of Contents
 * [Initial Setup](#initial-setup)
 * [Mentor Endpoints](#mentor-endpoints)
@@ -62,8 +62,7 @@ POST `/api/v1/mentors`
 `{
 "name": "name of mentor",
 "email": "email of mentor",
-"city": "city of mentor", 
-"user_id": "associated user_id"
+"city": "city of mentor"
 }`
 
 * the database already stores defaults for the attributes `active` and `matched`, so these are NOT included with a POST.
