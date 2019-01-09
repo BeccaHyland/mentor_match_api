@@ -6,7 +6,7 @@ describe 'mentors API' do
   describe 'POST /api/v1/mentors/' do
     describe 'as a non-admin user entering my info to become a mentor' do
       it 'posts successfully to the db' do
-        user = create(:user)
+        # user = create(:user)
         #token = Tokenator.encode(user.login)
         payload = {
           name: "Atreyu",
@@ -29,7 +29,7 @@ describe 'mentors API' do
           stack_preference: "BE",
           identity_preference: ["male-identifying"],
           meeting_location: ["Turing"],
-          user_id: user.id
+          # user_id: user.id
         }
 
         post '/api/v1/mentors', params: {
@@ -63,11 +63,11 @@ describe 'mentors API' do
       end
 
       it 'does not post successfully with missing attributes' do
-        user = create(:user)
+        # user = create(:user)
         #token = Tokenator.encode(user.login)
 
         payload = {
-          name: "Atreyu",
+          # name: "Atreyu",
           email: "never_ending@gmail.com",
           active: true
         }

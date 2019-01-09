@@ -94,7 +94,8 @@ describe 'mentors API' do
         user = create(:user, role: "user")
         #token = Tokenator.encode(user.login)
 
-        mentor_1 = create(:mentor, user_id: user.id)
+        # mentor_1 = create(:mentor, user_id: user.id)
+        mentor_1 = create(:mentor)
         mentor_2 = create(:mentor)
 
         id = mentor_1.id
