@@ -87,8 +87,7 @@ POST `/api/v1/mentors`
             "expertise_non_tech": ["rock-climbing", "parenting", "cooking"], <br>
             "mentee_capacity": 1, *(this is an integer)* <br>
             "meeting_location": ["remote"], <br>
-            "preferences": ["parent", "female-identifying", "FE"], <br>
-            "user_id": 2 *(this is an integer)*<br>
+            "preferences": ["parent", "female-identifying", "FE"] <br>
 }<br>
 
 ### 4. Update a mentor in the database
