@@ -91,7 +91,7 @@ if Rails.env == 'development' || Rails.env == 'production'
     meeting_location: ["Great Britain"],
     stack_preference: "Back-End",
     identity_preference: ["Veteran", "Female-identifying"],
-    user_id: user_1.id
+    #user_id: user_1.id
   )
 
   mentor_2 = Mentor.create!(
@@ -115,7 +115,7 @@ if Rails.env == 'development' || Rails.env == 'production'
     meeting_location: ["Great Britain"],
     stack_preference: "Front-End",
     identity_preference: ["Parent"],
-    user_id: user_2.id
+    # user_id: user_2.id
   )
   mentor_3 = Mentor.create!(
     name: "Susan Mel",
@@ -138,7 +138,7 @@ if Rails.env == 'development' || Rails.env == 'production'
     meeting_location: ["Great Britain"],
     stack_preference: "Front-End",
     identity_preference: [],
-    user_id: user_3.id
+    # user_id: user_3.id
   )
 
   student_mentor_1 = StudentMentor.create!(student_id: student_1.id, mentor_id: mentor_2.id)
