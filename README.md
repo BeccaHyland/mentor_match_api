@@ -1,4 +1,4 @@
-<img width="1436" alt="screen shot 2019-01-09 at 5 35 18 pm" src="https://user-images.githubusercontent.com/39714935/50940533-7e3d8680-143e-11e9-8ea6-e5b50a90d67b.png">
+![screen shot 2019-01-09 at 5 35 18 pm](https://user-images.githubusercontent.com/39714935/50940533-7e3d8680-143e-11e9-8ea6-e5b50a90d67b.png)
 [![Build Status](https://travis-ci.com/BeccaHyland/mentor_match_api.svg?branch=master)](https://travis-ci.com/BeccaHyland/mentor_match_api)
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/BeccaHyland/mentor_match_api.svg?columns=all)](https://waffle.io/BeccaHyland/mentor_match_api)
 
