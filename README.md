@@ -1,17 +1,25 @@
-![screen shot 2019-01-03 at 6 35 26 pm](https://user-images.githubusercontent.com/39714935/50670098-6bcad500-0f86-11e9-862e-457c5a122a1d.png)
+<img width="1436" alt="screen shot 2019-01-09 at 5 35 18 pm" src="https://user-images.githubusercontent.com/39714935/50940533-7e3d8680-143e-11e9-8ea6-e5b50a90d67b.png">
 [![Build Status](https://travis-ci.com/BeccaHyland/mentor_match_api.svg?branch=master)](https://travis-ci.com/BeccaHyland/mentor_match_api)
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/BeccaHyland/mentor_match_api.svg?columns=all)](https://waffle.io/BeccaHyland/mentor_match_api)
 
 # Mentor Match (API)
 
 ## Introduction
-  Mentor Match is an app for internal staff and student use at Turing School of Software & Design. In Module 1, Turing students have the opportunity to be matched to a software development mentor, usually an alumni, so this app gives admin tools to manage the matching process.
+  Mentor Match is an app for internal staff and student use at Turing School of Software & Design. Incoming Turing students have the opportunity to be matched to a software development mentor, usually an alumni, and Iteration 1 of Mentor Match gives admin tools to manage the matching process.
 
- In later Modules, students also contact alumni for short-term mentoring as a part of students' Professional Devlelopment curriculum, such as mock interviews and individual coffee meetings. Students can log in to the app to search for mentors in areas of interest and to connect.
+ Nearing graduation, students also contact alumni for short-term mentoring (mock interviews, coffee meetings) as a part of Turing's Professional Devlelopment curriculum. Iteration 2 will build student functionality to log in and search for mentors in areas of interest.
 
 In this repo, you will find the code and documentation for the Mentor Match back end, which provides the database and API endpoints for the Mentor Match Project and is deployed at https://mentor-match-api.herokuapp.com/
 
- Mentor Match is also deployed to a staging environment.
+ Mentor Match is also deployed to a staging environment to insulate the production site from bugs.
+ 
+## Developers
+BE:<br>
+Rebecca Hyland, Project Lead<br>
+Tim Fielder<br>
+FE:<br>
+Casey Hoepner<br>
+Alex Rau
 
  ## Table of Contents
 * [Initial Setup](#initial-setup)
@@ -291,7 +299,7 @@ within the spec_helper RSpec configure:
 
 
 ## <a name="known-issues"></a>Known Issues
-Integration with OAuth and JWT is in development.
+BE/FE Integration of OAuth through GitHUb and authorization with JWT is in development.
 
 ## Running Tests
 Run `rspec` from the CLI to run all tests.
@@ -300,17 +308,11 @@ Run `rspec` then the filepath of the test you wish to run.
 ## How to Contribute
 Drop a line to the creators, or add a Pull Request on GitHub.
 
-## Core Contributors
-Rebecca Hyland<br>
-Casey Hoepner<br>
-Alex Rau<br>
-Tim Fielder
-
 ## <a name="schema-design"></a>Schema Design
 
 <img width="1438" alt="screen shot 2019-01-02 at 6 30 11 pm" src="https://user-images.githubusercontent.com/39714935/50665860-7fb70c80-0f6f-11e9-8956-0c36cafdaa38.png">
 
-## Tech Stack List
+## BE Tech Stack List
 * Ruby 2.4.1
 * Ruby on Rails 5.1
 * Postgresql
