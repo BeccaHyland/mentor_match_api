@@ -2,14 +2,14 @@ require 'rails_helper'
 require './lib/tokenator.rb'
 include Tokenator
 
-describe 'student mentor API endpoints' do
-  describe 'DELETE request to /api/v1/student_mentors/:id' do
+describe 'admin student mentor API endpoints' do
+  describe 'DELETE request to /api/v1/admin/student_mentors/:id' do
     describe 'as an admin user' do
       it 'deletes a specific student mentor from db' do
         user = create(:user, role: "admin")
-       token = Tokenator.encode(user.login)
-      students = create_list(:student, 4)
-      mentors = create_list(:mentor, 2)
+        token = Tokenator.encode(user.login)
+        students = create_list(:student, 4)
+        mentors = create_list(:mentor, 2)
 
         mentor_1 = create (:mentor)
         student_1 = create (:student)
@@ -20,7 +20,7 @@ describe 'student mentor API endpoints' do
         student_mentor_count = StudentMentor.count
         expect(StudentMentor.find(id)).to be_valid
 
-        delete "/api/v1/student_mentors/#{id}", params: {
+        delete "/api/v1/admin/student_mentors/#{id}", params: {
           token: token
         }
 
@@ -44,7 +44,7 @@ describe 'student mentor API endpoints' do
         student_mentor_count = StudentMentor.count
         expect(StudentMentor.find(id)).to be_valid
 
-        delete "/api/v1/student_mentors/#{id}", params: {
+        delete "/api/v1/admin/student_mentors/#{id}", params: {
           token: token
         }
 

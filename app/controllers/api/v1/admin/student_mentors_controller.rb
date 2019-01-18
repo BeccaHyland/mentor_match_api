@@ -1,4 +1,4 @@
-class Api::V1::StudentMentorsController < ApplicationController
+class Api::V1::Admin::StudentMentorsController < ApplicationController
   before_action :authenticate_user!
   before_action :authorize_admin!
 

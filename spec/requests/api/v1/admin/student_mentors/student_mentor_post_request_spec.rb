@@ -2,8 +2,8 @@ require 'rails_helper'
 require './lib/tokenator.rb'
 include Tokenator
 
-describe 'student mentors API' do
-  describe 'POST /api/v1/student_mentors/' do
+describe 'admin student mentors API' do
+  describe 'POST /api/v1/admin/student_mentors/' do
     describe 'as an admin user matching a student to a mentor' do
       it 'posts successfully to the db' do
         user = create(:user, role: "admin")
@@ -16,7 +16,7 @@ describe 'student mentors API' do
           student_id: student_1.id
         }
 
-        post '/api/v1/student_mentors', params: {
+        post '/api/v1/admin/student_mentors', params: {
           student_mentor: payload,
           token: token
         }
@@ -42,7 +42,7 @@ describe 'student mentors API' do
           mentor_id: mentor_1.id,
         }
 
-        post '/api/v1/student_mentors', params: {
+        post '/api/v1/admin/student_mentors', params: {
           student_mentor: payload,
           token: token
         }
@@ -66,7 +66,7 @@ describe 'student mentors API' do
           student_id: student_1.id
         }
 
-        post '/api/v1/student_mentors', params: {
+        post '/api/v1/admin/student_mentors', params: {
           student_mentor: payload,
           token: token
         }

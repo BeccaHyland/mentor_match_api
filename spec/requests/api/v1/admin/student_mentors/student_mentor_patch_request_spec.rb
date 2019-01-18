@@ -2,10 +2,10 @@ require 'rails_helper'
 require './lib/tokenator.rb'
 include Tokenator
 
-describe 'student_mentors API' do
-  describe 'PATCH /api/v1/student_mentors/:id' do
+describe 'admin student_mentors API' do
+  describe 'PATCH /api/v1/admin/student_mentors/:id' do
     describe 'as an admin user' do
-      it 'patches successfully to /api/v1/student_mentors/:id' do
+      it 'patches successfully to /api/v1/admin/student_mentors/:id' do
         user = create(:user, role: "admin")
         token = Tokenator.encode(user.login)
 
@@ -25,7 +25,7 @@ describe 'student_mentors API' do
           active: false
         }
 
-        patch "/api/v1/student_mentors/#{id}", params: {
+        patch "/api/v1/admin/student_mentors/#{id}", params: {
           student_mentor: payload,
           token: token
         }
@@ -63,7 +63,7 @@ describe 'student_mentors API' do
           matched: true
         }
 
-        patch "/api/v1/mentors/#{id}", params: {
+        patch "/api/v1/admin/student_mentors/#{id}", params: {
           mentor: payload,
           token: token_1
         }
