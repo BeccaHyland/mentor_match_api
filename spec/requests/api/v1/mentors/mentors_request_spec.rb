@@ -23,6 +23,8 @@ describe 'mentors API' do
         expect(get_response[:data]).to be_an(Array)
         expect(get_response[:data].length).to eq(2)
 
+        expect(get_response[:data].first[:attributes][:avatar_url]).to eq(user[:avatar_url])
+
         expect(get_response[:data].first[:attributes][:name]).to eq(mentor_1[:name])
         expect(get_response[:data].first[:attributes][:email]).to eq(mentor_1[:email])
         expect(get_response[:data].first[:attributes][:city]).to eq(mentor_1[:city])
@@ -79,6 +81,8 @@ describe 'mentors API' do
 
         expect(get_response[:data]).to be_an(Array)
         expect(get_response[:data].length).to eq(2)
+
+        expect(get_response[:data].first[:attributes][:avatar_url]).to eq(user[:avatar_url])
 
         # expect(get_response[:data].first[:attributes][:identity_preference]).to eq(nil)
         # expect(get_response[:data].first[:attributes][:mentee_capacity]).to eq(nil)
