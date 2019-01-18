@@ -14,9 +14,7 @@ describe 'admin mentors API' do
 
         id = mentor_1.id
 
-        get "/api/v1/admin/mentors/#{id}", params: {
-         token: token
-        }
+        get "/api/v1/admin/mentors/#{id}", params: {}, headers: {'Authorization': token}
 
         expect(response.status).to eq(200)
 
@@ -59,9 +57,7 @@ describe 'admin mentors API' do
 
         id = mentor_1.id
 
-        get "/api/v1/admin/mentors/#{id}", params: {
-         token: token
-        }
+        get "/api/v1/admin/mentors/#{id}", params: {}, headers: {'Authorization': token}
 
         expect(response.status).to eq(401)
       end

@@ -5,7 +5,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
 
   def current_user
-    token = params[:token]
+    #token = params[:token] #token should be extracted from headers
+    token = request.headers["Authorization"]
     if token.nil?
       head :unauthorized
     else

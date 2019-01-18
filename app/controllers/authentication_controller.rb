@@ -16,7 +16,7 @@ class AuthenticationController < ApplicationController
       name: name,
       avatar_url: avatar_url
     )
-    redirect_to "#{issuer}?token=#{token}"
+    redirect_to "#{issuer}?token=#{token}" #add header with token here.
     rescue StandardError => error
     redirect_to "#{issuer}?error=#{error.message}"
   end
