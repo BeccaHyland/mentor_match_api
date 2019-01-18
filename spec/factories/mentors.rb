@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :mentor do
-    # user
+    user
     name { Faker::TheITCrowd.character }
     email { Faker::Internet.email }
     city { "Denver" }

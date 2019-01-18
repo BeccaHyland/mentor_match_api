@@ -25,7 +25,7 @@ describe 'mentors API' do
 
         expect(get_response[:data][:attributes][:identity_preference]).to eq(nil)
         expect(get_response[:data][:attributes][:mentee_capacity]).to eq(nil)
-        
+
         expect(get_response[:data][:attributes][:name]).to eq(mentor_1[:name])
         expect(get_response[:data][:attributes][:email]).to eq(mentor_1[:email])
         expect(get_response[:data][:attributes][:city]).to eq(mentor_1[:city])
@@ -95,9 +95,7 @@ describe 'mentors API' do
         user = create(:user, role: "user")
         token = Tokenator.encode(user.login)
 
-        # mentor_1 = create(:mentor, user_id: user.id)
-        mentor_1 = create(:mentor)
-        mentor_2 = create(:mentor)
+        mentor_1 = create(:mentor, user_id: user.id)
 
         id = mentor_1.id
 

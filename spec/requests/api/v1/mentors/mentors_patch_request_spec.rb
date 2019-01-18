@@ -44,8 +44,7 @@ describe 'mentors API' do
         token = Tokenator.encode(user.login)
 
         extra_mentor_to_throw_off_id_count_within_test = create(:mentor)
-        # mentor_requesting_update = create(:mentor, user_id: user.id)
-        mentor_requesting_update = create(:mentor)
+        mentor_requesting_update = create(:mentor, user_id: user.id)
         id = mentor_requesting_update.id
 
         previous_name = Mentor.last.name
@@ -83,8 +82,7 @@ describe 'mentors API' do
         user_2 = create(:user)
         token_2 = Tokenator.encode(user_2.login)
 
-        # mentor_requesting_update = create(:mentor, user_id: user_2.id)
-        mentor_requesting_update = create(:mentor)
+        mentor_requesting_update = create(:mentor, user_id: user_2.id)
         id = mentor_requesting_update.id
 
         previous_name = Mentor.last.name
