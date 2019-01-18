@@ -2,8 +2,8 @@ require 'rails_helper'
 require './lib/tokenator.rb'
 include Tokenator
 
-describe 'mentors API' do
-  describe 'GET /api/v1/mentors' do
+describe 'admin mentors API' do
+  describe 'GET /api/v1/admin/mentors' do
     describe 'as an admin user with a token' do
       it 'returns all mentors in db, each with ALL attributes' do
         user = create(:user, role: "admin")
@@ -22,6 +22,8 @@ describe 'mentors API' do
 
         expect(get_response[:data]).to be_an(Array)
         expect(get_response[:data].length).to eq(2)
+
+        expect(get_response[:data].first[:attributes][:avatar_url]).to eq(user[:avatar_url])
 
         expect(get_response[:data].first[:attributes][:name]).to eq(mentor_1[:name])
         expect(get_response[:data].first[:attributes][:email]).to eq(mentor_1[:email])

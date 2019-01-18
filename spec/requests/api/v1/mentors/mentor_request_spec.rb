@@ -25,6 +25,8 @@ describe 'mentors API' do
 
         expect(get_response[:data][:attributes][:identity_preference]).to eq(nil)
         expect(get_response[:data][:attributes][:mentee_capacity]).to eq(nil)
+        
+        expect(get_response[:data][:attributes][:avatar_url]).to eq(user[:avatar_url])
 
         expect(get_response[:data][:attributes][:name]).to eq(mentor_1[:name])
         expect(get_response[:data][:attributes][:email]).to eq(mentor_1[:email])
@@ -69,6 +71,8 @@ describe 'mentors API' do
         expect(get_response[:data][:attributes][:identity_preference]).to eq(nil)
         expect(get_response[:data][:attributes][:mentee_capacity]).to eq(nil)
 
+        expect(get_response[:data][:attributes][:avatar_url]).to eq(user[:avatar_url])
+
         expect(get_response[:data][:attributes][:name]).to eq(mentor_1[:name])
         expect(get_response[:data][:attributes][:email]).to eq(mentor_1[:email])
         expect(get_response[:data][:attributes][:city]).to eq(mentor_1[:city])
@@ -110,6 +114,8 @@ describe 'mentors API' do
 
         expect(get_response[:data][:attributes][:identity_preference]).to eq(mentor_1[:identity_preference])
         expect(get_response[:data][:attributes][:mentee_capacity]).to eq(mentor_1[:mentee_capacity])
+
+        expect(get_response[:data][:attributes][:avatar_url]).to eq(user[:avatar_url])
 
         expect(get_response[:data][:attributes][:name]).to eq(mentor_1[:name])
         expect(get_response[:data][:attributes][:email]).to eq(mentor_1[:email])

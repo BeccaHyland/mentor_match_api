@@ -30,18 +30,22 @@ describe 'mentors API' do
           stack_preference: "BE",
           identity_preference: ["male-identifying"],
           meeting_location: ["Turing"],
-          # user_id: user.id
+          user_id: user.id
         }
 
         post '/api/v1/mentors', params: {
           mentor: payload,
-         token: token
+          token: token
         }
 
         mentor = Mentor.last
 
         expect(response).to be_successful
         expect(response.status).to eq(201)
+
+        data = JSON.parse(response.body, symbolize_names: true)
+        expect(data[:data][:attributes][:avatar_url]).to eq(user.avatar_url)
+
         expect(mentor.name).to eq(payload[:name])
         expect(mentor.city).to eq(payload[:city])
         expect(mentor.state).to eq(payload[:state])

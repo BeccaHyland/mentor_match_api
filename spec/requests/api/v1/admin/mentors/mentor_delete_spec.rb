@@ -2,7 +2,7 @@ require 'rails_helper'
 require './lib/tokenator.rb'
 include Tokenator
 
-describe 'mentor API endpoints' do
+describe 'admin mentor API endpoints' do
   describe 'DELETE request to /api/v1/admin/mentors/:id' do
     describe 'as an admin user' do
       it 'deletes a specific mentor from db' do

@@ -2,8 +2,8 @@ require 'rails_helper'
 require './lib/tokenator.rb'
 include Tokenator
 
-describe 'mentors API' do
-  describe 'PATCH /api/v1/mentors/:id' do
+describe 'admin mentors API' do
+  describe 'PATCH /api/v1/admin/mentors/:id' do
     describe 'as an admin user' do
       it 'patches successfully to /api/v1/admin/mentors/:id' do
         user = create(:user, role: "admin")
