@@ -6,8 +6,13 @@ describe 'mentors API' do
   describe 'POST /api/v1/mentors/' do
     describe 'as a non-admin user entering my info to become a mentor' do
       it 'posts successfully to the db' do
+<<<<<<< HEAD
         # user = create(:user)
         #token = Tokenator.encode(user.login)
+=======
+        user = create(:user)
+        token = Tokenator.encode(user.login)
+>>>>>>> 9fd9da84d15be12ad279f6897f6022b42f600757
         payload = {
           name: "Atreyu",
           email: "never_ending@gmail.com",
@@ -33,8 +38,8 @@ describe 'mentors API' do
         }
 
         post '/api/v1/mentors', params: {
-          mentor: payload #,
-        #  token: token
+          mentor: payload,
+         token: token
         }
 
         mentor = Mentor.last
@@ -63,8 +68,13 @@ describe 'mentors API' do
       end
 
       it 'does not post successfully with missing attributes' do
+<<<<<<< HEAD
         # user = create(:user)
         #token = Tokenator.encode(user.login)
+=======
+        user = create(:user)
+        token = Tokenator.encode(user.login)
+>>>>>>> 9fd9da84d15be12ad279f6897f6022b42f600757
 
         payload = {
           # name: "Atreyu",
@@ -73,8 +83,8 @@ describe 'mentors API' do
         }
 
         post '/api/v1/mentors', params: {
-          mentor: payload #,
-        #  token: token
+          mentor: payload ,
+         token: token
         }
 
         mentor = Mentor.last
@@ -85,41 +95,41 @@ describe 'mentors API' do
     end
 
     describe 'as an admin user submitting the create mentor form' do
-      # it 'does not post successfully to the db' do
-      #   user = create(:user, role: "admin")
-      #   #token = Tokenator.encode(user.login)
-      #
-      #   payload = {
-      #     name: "Atreyu",
-      #     email: "never_ending@gmail.com",
-      #     city: "New York",
-      #     state: "NY",
-      #     country: "USA",
-      #     slack_username: "atreyu@slack.com",
-      #     matched: false,
-      #     active: true,
-      #     pronouns: "He/Him",
-      #     current_title: "Software Developer",
-      #     current_employer: "Atlantic Records",
-      #     background: "Punk Rock",
-      #     mentee_capacity: 1,
-      #     meeting_location: ["Turing"],
-      #     industries: ["here", "there"],
-      #     ways_to_mentor: ["wisdom", "insight"],
-      #     expertise_tech: ["wisdom", "insight"],
-      #     expertise_non_tech: ["wisdom", "insight"],
-      #     stack_preference: "BE",
-      #     identity_preference: ["male-identifying"],
-      #     user_id: user.id
-      #   }
-      #
-      #   post '/api/v1/mentors', params: {
-      #     mentor: payload #,
-      #   #  token: token
-      #   }
-      #
-      #   #expect(response.status).to eq(401)
-      # end
+      it 'does not post successfully to the db' do
+        user = create(:user, role: "admin")
+        token = Tokenator.encode(user.login)
+
+        payload = {
+          name: "Atreyu",
+          email: "never_ending@gmail.com",
+          city: "New York",
+          state: "NY",
+          country: "USA",
+          slack_username: "atreyu@slack.com",
+          matched: false,
+          active: true,
+          pronouns: "He/Him",
+          current_title: "Software Developer",
+          current_employer: "Atlantic Records",
+          background: "Punk Rock",
+          mentee_capacity: 1,
+          meeting_location: ["Turing"],
+          industries: ["here", "there"],
+          ways_to_mentor: ["wisdom", "insight"],
+          expertise_tech: ["wisdom", "insight"],
+          expertise_non_tech: ["wisdom", "insight"],
+          stack_preference: "BE",
+          identity_preference: ["male-identifying"],
+          user_id: user.id
+        }
+
+        post '/api/v1/mentors', params: {
+          mentor: payload,
+         token: token
+        }
+
+        expect(response.status).to eq(401)
+      end
     end
   end
 end

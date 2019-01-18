@@ -7,7 +7,7 @@ describe 'student_mentors API' do
     describe 'as an admin user' do
       it 'patches successfully to /api/v1/student_mentors/:id' do
         user = create(:user, role: "admin")
-        # token = Tokenator.encode(user.login)
+        token = Tokenator.encode(user.login)
 
         student_1 = create(:student)
         student_2 = create(:student)
@@ -27,7 +27,7 @@ describe 'student_mentors API' do
 
         patch "/api/v1/student_mentors/#{id}", params: {
           student_mentor: payload,
-          # token: token
+          token: token
         }
 
         student_mentor = StudentMentor.find_by_id(id)
@@ -44,41 +44,41 @@ describe 'student_mentors API' do
     end
 
     describe 'as a non-admin user whose id does not match the request' do
-      # it 'returns a 401 unauthorized error' do
-      #   user_1 = create(:user)
-      #   token_1 = Tokenator.encode(user_1.login)
-      #   user_2 = create(:user)
-      #   token_2 = Tokenator.encode(user_2.login)
-      #
-      #   mentor_requesting_update = create(:mentor, user_id: user_2.id)
-      #   id = mentor_requesting_update.id
-      #
-      #   previous_name = Mentor.last.name
-      #   previous_email = Mentor.last.email
-      #   previous_matched = Mentor.last.matched
-      #
-      #   payload = {
-      #     name: "Douglas Adams",
-      #     email: "forty_two@gmail.com",
-      #     matched: true
-      #   }
-      #
-      #   patch "/api/v1/mentors/#{id}", params: {
-      #     mentor: payload,
-      #     token: token_1
-      #   }
-      #
-      #   mentor = Mentor.find_by_id(id)
-      #
-      #   expect(response.status).to eq(401)
-      #
-      #   expect(mentor.name).to eq(previous_name)
-      #   expect(mentor.email).to eq(previous_email)
-      #   expect(mentor.matched).to eq(previous_matched)
-      #   expect(mentor.name).to_not eq(payload[:name])
-      #   expect(mentor.email).to_not eq(payload[:email])
-      #   expect(mentor.matched).to_not eq(payload[:matched])
-      # end
+      it 'returns a 401 unauthorized error' do
+        user_1 = create(:user)
+        token_1 = Tokenator.encode(user_1.login)
+        user_2 = create(:user)
+        token_2 = Tokenator.encode(user_2.login)
+
+        mentor_requesting_update = create(:mentor, user_id: user_2.id)
+        id = mentor_requesting_update.id
+
+        previous_name = Mentor.last.name
+        previous_email = Mentor.last.email
+        previous_matched = Mentor.last.matched
+
+        payload = {
+          name: "Douglas Adams",
+          email: "forty_two@gmail.com",
+          matched: true
+        }
+
+        patch "/api/v1/mentors/#{id}", params: {
+          mentor: payload,
+          token: token_1
+        }
+
+        mentor = Mentor.find_by_id(id)
+
+        expect(response.status).to eq(401)
+
+        expect(mentor.name).to eq(previous_name)
+        expect(mentor.email).to eq(previous_email)
+        expect(mentor.matched).to eq(previous_matched)
+        expect(mentor.name).to_not eq(payload[:name])
+        expect(mentor.email).to_not eq(payload[:email])
+        expect(mentor.matched).to_not eq(payload[:matched])
+      end
     end
   end
 end
