@@ -24,7 +24,7 @@ class Authenticator
       client_id:     ENV['CLIENT_ID'],
       client_secret: ENV['CLIENT_SECRET']
     }
-    raise IOError, 'FETCH_ACCESS_TOKEN' unless response.success?''
+    raise IOError, 'FETCH_ACCESS_TOKEN' unless response.success?
     URI.decode_www_form(response.body).to_h
   end
 
