@@ -14,7 +14,8 @@ class AuthenticationController < ApplicationController
     token = Tokenator.encode(login)
     User.where(login: login).first_or_create!(
       name: name,
-      avatar_url: avatar_url
+      avatar_url: avatar_url,
+      login: login
     )
     redirect_to "#{issuer}?token=#{token}" #add header with token here.
     rescue StandardError => error
