@@ -34,8 +34,10 @@ describe 'mentors API' do
         }
 
         post '/api/v1/mentors', params: {
-          mentor: payload,
-          token: token
+          mentor: payload
+        },
+        headers: {
+          'Authorization': token
         }
 
         mentor = Mentor.last
@@ -78,8 +80,10 @@ describe 'mentors API' do
         }
 
         post '/api/v1/mentors', params: {
-          mentor: payload ,
-          token: token
+          mentor: payload
+        },
+        headers: {
+          'Authorization': token
         }
 
         mentor = Mentor.last
@@ -119,8 +123,10 @@ describe 'mentors API' do
         }
 
         post '/api/v1/mentors', params: {
-          mentor: payload,
-         token: token
+          mentor: payload
+        },
+        headers: {
+          'Authorization': token
         }
 
         expect(response.status).to eq(401)

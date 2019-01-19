@@ -14,9 +14,7 @@ describe 'mentors API' do
 
         id = mentor_1.id
 
-        get "/api/v1/mentors/#{id}", params: {
-         token: token
-        }
+        get "/api/v1/mentors/#{id}", params: {}, headers: {'Authorization': token}
 
         expect(response.status).to eq(200)
 
@@ -25,7 +23,7 @@ describe 'mentors API' do
 
         expect(get_response[:data][:attributes][:identity_preference]).to eq(nil)
         expect(get_response[:data][:attributes][:mentee_capacity]).to eq(nil)
-        
+
         expect(get_response[:data][:attributes][:avatar_url]).to eq(user[:avatar_url])
 
         expect(get_response[:data][:attributes][:name]).to eq(mentor_1[:name])
@@ -59,9 +57,7 @@ describe 'mentors API' do
 
         id = mentor_1.id
 
-        get "/api/v1/mentors/#{id}", params: {
-         token: token
-        }
+        get "/api/v1/mentors/#{id}", params: {}, headers: {'Authorization': token}
 
         expect(response.status).to eq(200)
 
@@ -103,10 +99,8 @@ describe 'mentors API' do
 
         id = mentor_1.id
 
-        get "/api/v1/mentors/#{id}", params: {
-         token: token
-        }
-
+        get "/api/v1/mentors/#{id}", params: {}, headers: {'Authorization': token}
+        
         expect(response.status).to eq(200)
 
         get_response = JSON.parse(response.body, symbolize_names: true)
