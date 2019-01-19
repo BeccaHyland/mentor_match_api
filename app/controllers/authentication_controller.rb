@@ -11,7 +11,10 @@ class AuthenticationController < ApplicationController
     name = user_info[:name]
     avatar_url = user_info[:avatar_url]
 
+    redirect_to "#{issuer}?token=#{login + name + avatar_url}" #add header with token here.
+
     token = Tokenator.encode(login)
+
     User.where(login: login).first_or_create!(
       name: name,
       avatar_url: avatar_url,
