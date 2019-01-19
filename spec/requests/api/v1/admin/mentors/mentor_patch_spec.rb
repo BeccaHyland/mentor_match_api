@@ -21,8 +21,10 @@ describe 'admin mentors API' do
         }
 
         patch "/api/v1/admin/mentors/#{id}", params: {
-          mentor: payload,
-         token: token
+          mentor: payload
+        },
+        headers: {
+          'Authorization': token
         }
 
         mentor = Mentor.find_by_id(id)
@@ -57,8 +59,10 @@ describe 'admin mentors API' do
         }
 
         patch "/api/v1/admin/mentors/#{id}", params: {
-          mentor: payload,
-         token: token
+          mentor: payload
+        },
+        headers: {
+          'Authorization': token
         }
 
         mentor = Mentor.find_by_id(id)

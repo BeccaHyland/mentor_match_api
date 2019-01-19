@@ -15,9 +15,7 @@ describe 'admin mentor API endpoints' do
         mentor_count = Mentor.count
         expect(Mentor.find(id)).to be_valid
 
-        delete "/api/v1/admin/mentors/#{id}", params: {
-         token: token
-        }
+        delete "/api/v1/admin/mentors/#{id}", params: {}, headers: {'Authorization': token}
 
         expect(response.status).to eq(204)
         new_mentor_count = mentor_count - 1
@@ -36,9 +34,7 @@ describe 'admin mentor API endpoints' do
         mentor_count = Mentor.count
         expect(Mentor.find(id)).to be_valid
 
-        delete "/api/v1/admin/mentors/#{id}", params: {
-         token: token
-        }
+        delete "/api/v1/admin/mentors/#{id}", params: {}, headers: {'Authorization': token}
 
         expect(response.status).to eq(401)
         new_mentor_count = mentor_count - 1

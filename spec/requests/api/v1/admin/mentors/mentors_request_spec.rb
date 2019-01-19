@@ -12,9 +12,7 @@ describe 'admin mentors API' do
         mentor_1 = create(:mentor)
         mentor_2 = create(:mentor)
 
-        get '/api/v1/admin/mentors', params: {
-         token: token
-        }
+        get '/api/v1/admin/mentors', params: {}, headers: {'Authorization': token}
 
         expect(response.status).to eq(200)
 
@@ -57,7 +55,7 @@ describe 'admin mentors API' do
         mentor_1 = create(:mentor)
         mentor_2 = create(:mentor)
 
-        get '/api/v1/admin/mentors', params: {}
+        get '/api/v1/admin/mentors', params: {}, headers: {}
 
         expect(response.status).to eq(401)
       end
@@ -71,9 +69,7 @@ describe 'admin mentors API' do
         mentor_1 = create(:mentor)
         mentor_2 = create(:mentor)
 
-        get '/api/v1/admin/mentors', params: {
-         token: token
-        }
+        get '/api/v1/admin/mentors', params: {}, headers: {'Authorization': token}
 
         expect(response.status).to eq(401)
       end
