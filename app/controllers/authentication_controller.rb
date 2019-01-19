@@ -13,13 +13,18 @@ class AuthenticationController < ApplicationController
 
     token = Tokenator.encode(login)
 
-    user_1 = User.where(login: login).first_or_create!(
+    user = User.where(login: login).first_or_create!(
       name: name,
       avatar_url: avatar_url,
       login: login
     )
-    
-    redirect_to "#{issuer}?token=#{token}" #add header with token here.
+
+    if user.role == "admin"
+      redirect_to "https://turing-mentor-match.herokuapp.com/admin-dashboard?token=#{token}" #add header with token here.
+    else
+      redirect_to "https://turing-mentor-match.herokuapp.com/new-mentor-form?token=#{token}" #add header with token here.
+    end
+    # redirect_to "#{issuer}?token=#{token}" #add header with token here.
     rescue StandardError => error
     redirect_to "#{issuer}?error=#{error.message}"
   end
