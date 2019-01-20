@@ -20,9 +20,9 @@ class AuthenticationController < ApplicationController
     )
 
     if user.role == "admin"
-      redirect_to "https://turing-mentor-match.herokuapp.com/admin-dashboard?token=#{token}" #add header with token here.
+      redirect_to "#{issuer}admin-dashboard?token=#{token}"
     else
-      redirect_to "https://turing-mentor-match.herokuapp.com/new-mentor-form?token=#{token}" #add header with token here.
+      redirect_to "#{issuer}new-mentor-form?token=#{token}"
     end
     rescue StandardError => error
     redirect_to "#{issuer}?error=#{error.message}"
