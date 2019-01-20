@@ -17,8 +17,10 @@ describe 'admin student mentors API' do
         }
 
         post '/api/v1/admin/student_mentors', params: {
-          student_mentor: payload,
-          token: token
+          student_mentor: payload
+        },
+        headers: {
+          'Authorization': token
         }
 
         student_mentor = StudentMentor.last
@@ -43,8 +45,10 @@ describe 'admin student mentors API' do
         }
 
         post '/api/v1/admin/student_mentors', params: {
-          student_mentor: payload,
-          token: token
+          student_mentor: payload
+        },
+        headers: {
+          'Authorization': token
         }
 
         student_mentor = StudentMentor.last
@@ -67,8 +71,10 @@ describe 'admin student mentors API' do
         }
 
         post '/api/v1/admin/student_mentors', params: {
-          student_mentor: payload,
-          token: token
+          student_mentor: payload
+        },
+        headers: {
+          'Authorization': token
         }
 
         expect(response.status).to eq(401)

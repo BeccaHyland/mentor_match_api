@@ -26,8 +26,10 @@ describe 'admin student_mentors API' do
         }
 
         patch "/api/v1/admin/student_mentors/#{id}", params: {
-          student_mentor: payload,
-          token: token
+          student_mentor: payload
+        },
+        headers: {
+          'Authorization': token
         }
 
         student_mentor = StudentMentor.find_by_id(id)
@@ -64,8 +66,10 @@ describe 'admin student_mentors API' do
         }
 
         patch "/api/v1/admin/student_mentors/#{id}", params: {
-          mentor: payload,
-          token: token_1
+          mentor: payload
+        },
+        headers: {
+          'Authorization': token_1
         }
 
         mentor = Mentor.find_by_id(id)

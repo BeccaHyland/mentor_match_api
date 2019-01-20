@@ -25,9 +25,7 @@ describe 'admin student_mentors API' do
         student_mentor_3 = StudentMentor.create(student_id: student_3.id, mentor_id: mentor_2.id, active: true)
         student_mentor_4 = StudentMentor.create(student_id: student_4.id, mentor_id: mentor_2.id, active: true)
 
-        get "/api/v1/admin/student_mentors/#{student_mentor_4.id}", params: {
-          token: token
-        }
+        get "/api/v1/admin/student_mentors/#{student_mentor_4.id}", params: {}, headers: {'Authorization': token}
 
         expect(response.status).to eq(200)
 
@@ -64,9 +62,7 @@ describe 'admin student_mentors API' do
 
         student_mentor_count = StudentMentor.all.count
 
-        get "/api/v1/admin/student_mentors/#{student_mentor_4.id}", params: {
-          token: token
-        }
+        get "/api/v1/admin/student_mentors/#{student_mentor_4.id}", params: {}, headers: {'Authorization': token}
 
         expect(response.status).to eq(401)
       end
