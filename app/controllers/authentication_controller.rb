@@ -24,7 +24,6 @@ class AuthenticationController < ApplicationController
     else
       redirect_to "https://turing-mentor-match.herokuapp.com/new-mentor-form?token=#{token}" #add header with token here.
     end
-    # redirect_to "#{issuer}?token=#{token}" #add header with token here.
     rescue StandardError => error
     redirect_to "#{issuer}?error=#{error.message}"
   end
