@@ -12,9 +12,7 @@ describe 'admin students API' do
         student_1 = Student.create(name: "test student 1", email: "test@email.com", slack_username: "test1")
         student_2 = Student.create(name: "test student 2", email: "test@contact.com", slack_username: "test2")
 
-        get '/api/v1/admin/students', params: {
-          token: token
-        }
+        get '/api/v1/admin/students', params: {}, headers: {'Authorization': token}
 
         expect(response.status).to eq(200)
 
@@ -40,9 +38,7 @@ describe 'admin students API' do
           student_1 = Student.create(name: "test student 1", email: "test@email.com", slack_username: "test1")
           student_2 = Student.create(name: "test student 2", email: "test@contact.com", slack_username: "test2")
 
-          get '/api/v1/admin/students', params: {
-            token: token
-          }
+          get '/api/v1/admin/students', params: {}, headers: {'Authorization': token}
 
           expect(response.status).to eq(401)
       end

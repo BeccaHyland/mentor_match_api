@@ -14,9 +14,7 @@ describe 'admin students API' do
 
         id = student_1.id
 
-        get "/api/v1/admin/students/#{id}", params: {
-          token: token
-        }
+        get "/api/v1/admin/students/#{id}", params: {}, headers: {'Authorization': token}
 
         expect(response.status).to eq(200)
 
@@ -46,9 +44,7 @@ describe 'admin students API' do
 
         id = student_1.id
 
-        get "/api/v1/admin/students/#{id}", params: {
-          token: token
-        }
+        get "/api/v1/admin/students/#{id}", params: {}, headers: {'Authorization': token}
 
         expect(response.status).to eq(401)
       end

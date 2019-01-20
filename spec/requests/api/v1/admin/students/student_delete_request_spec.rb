@@ -15,9 +15,7 @@ describe 'admin student API endpoints' do
         student_count = Student.count
         expect(Student.find(id)).to be_valid
 
-        delete "/api/v1/admin/students/#{id}", params: {
-          token: token
-        }
+        delete "/api/v1/admin/students/#{id}", params: {}, headers: {'Authorization': token}
 
         expect(response.status).to eq(204)
         new_student_count = student_count - 1
@@ -35,9 +33,7 @@ describe 'admin student API endpoints' do
         student_count = Student.count
         expect(Student.find(id)).to be_valid
 
-        delete "/api/v1/admin/students/#{id}", params: {
-          token: token
-        }
+        delete "/api/v1/admin/students/#{id}", params: {}, headers: {'Authorization': token}
 
         expect(response.status).to eq(401)
         expect(Student.count).to eq(student_count)

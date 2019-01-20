@@ -21,8 +21,10 @@ describe 'admin students API' do
         }
 
         patch "/api/v1/admin/students/#{id}", params: {
-          student: payload,
-          token: token
+          student: payload
+        },
+        headers: {
+          'Authorization': token
         }
 
         student = Student.find_by_id(id)
@@ -54,8 +56,10 @@ describe 'admin students API' do
         }
 
         patch "/api/v1/admin/students/#{id}", params: {
-          student: payload,
-          token: token
+          student: payload
+        },
+        headers: {
+          'Authorization': token
         }
 
         student = Student.find_by_id(id)

@@ -23,8 +23,10 @@ describe 'admin students API' do
         }
 
         post '/api/v1/admin/students', params: {
-          student: payload,
-          token: token
+          student: payload
+        },
+        headers: {
+          'Authorization': token
         }
 
         student = Student.last
@@ -52,8 +54,10 @@ describe 'admin students API' do
         }
 
         post '/api/v1/admin/students', params: {
-          student: payload,
-          token: token
+          student: payload
+        },
+        headers: {
+          'Authorization': token
         }
 
         student = Student.last
@@ -83,8 +87,10 @@ describe 'admin students API' do
         }
 
         post '/api/v1/admin/students', params: {
-          student: payload,
-          token: token
+          student: payload
+        },
+        headers: {
+          'Authorization': token
         }
 
         expect(response).to_not be_successful
