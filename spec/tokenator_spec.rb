@@ -9,7 +9,7 @@ describe 'Tokenator Module' do
   end
   it 'has methods' do
     token = "12343"
-    Tokenator.encode(token)
-    Tokenator.decode(token)
+    encoded = Tokenator.encode(token)
+    Tokenator.decode(encoded)
   end
 end

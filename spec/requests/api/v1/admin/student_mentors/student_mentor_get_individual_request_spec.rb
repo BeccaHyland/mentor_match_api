@@ -2,12 +2,12 @@ require 'rails_helper'
 require './lib/tokenator.rb'
 include Tokenator
 
-describe 'student_mentors API' do
-  describe 'GET /api/v1/student_mentors/:id' do
+describe 'admin student_mentors API' do
+  describe 'GET /api/v1/admin/student_mentors/:id' do
     describe 'as an admin user' do
       it 'returns a student_mentor relationship in db' do
         user = User.create(name: "name_of_user", role: "admin", login: "xyz")
-        #token = Tokenator.encode(user.login)
+        token = Tokenator.encode(user.login)
 
         students = create_list(:student, 4)
         mentors = create_list(:mentor, 2)
@@ -25,9 +25,7 @@ describe 'student_mentors API' do
         student_mentor_3 = StudentMentor.create(student_id: student_3.id, mentor_id: mentor_2.id, active: true)
         student_mentor_4 = StudentMentor.create(student_id: student_4.id, mentor_id: mentor_2.id, active: true)
 
-        get "/api/v1/student_mentors/#{student_mentor_4.id}", params: {
-          # token: token
-        }
+        get "/api/v1/admin/student_mentors/#{student_mentor_4.id}", params: {}, headers: {'Authorization': token}
 
         expect(response.status).to eq(200)
 
@@ -43,7 +41,7 @@ describe 'student_mentors API' do
     describe 'as a non-admin user' do
       it 'does not return a student_mentor relationship in db' do
         user = User.create(name: "name_of_user", login: "xyz")
-        # token = Tokenator.encode(user.login)
+        token = Tokenator.encode(user.login)
 
         students = create_list(:student, 4)
         mentors = create_list(:mentor, 2)
@@ -64,11 +62,9 @@ describe 'student_mentors API' do
 
         student_mentor_count = StudentMentor.all.count
 
-        get "/api/v1/student_mentors/#{student_mentor_4.id}", params: {
-          # token: token
-        }
+        get "/api/v1/admin/student_mentors/#{student_mentor_4.id}", params: {}, headers: {'Authorization': token}
 
-        #expect(response.status).to eq(401)
+        expect(response.status).to eq(401)
       end
     end
   end
