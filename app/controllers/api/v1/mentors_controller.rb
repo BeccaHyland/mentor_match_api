@@ -1,5 +1,6 @@
 class Api::V1::MentorsController < ApplicationController
   before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: [:index]
 
   def create
     if admin_user?

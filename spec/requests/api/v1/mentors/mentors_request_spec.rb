@@ -50,7 +50,7 @@ describe 'mentors API' do
     end
 
     describe 'as user without a token' do
-      it 'returns a 401' do
+      it 'returns a 200' do
         user = create(:user)
 
         mentor_1 = create(:mentor)
@@ -58,7 +58,7 @@ describe 'mentors API' do
 
         get '/api/v1/mentors', params: {}, headers: {}
 
-        expect(response.status).to eq(401)
+        expect(response.status).to eq(200)
       end
     end
 
@@ -110,7 +110,7 @@ describe 'mentors API' do
     end
 
     describe 'as a non-admin user without a token' do
-      it 'returns a 401' do
+      it 'returns a 200' do
         user = create(:user)
 
         mentor_1 = create(:mentor)
@@ -118,7 +118,7 @@ describe 'mentors API' do
 
         get '/api/v1/mentors', params: {}, headers: {}
 
-        expect(response.status).to eq(401)
+        expect(response.status).to eq(200)
       end
     end
   end
