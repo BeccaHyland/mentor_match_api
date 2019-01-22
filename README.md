@@ -50,7 +50,7 @@ To supply the Front End app with data, this project provides the following endpo
   GET `/api/v1/mentors`
   * returns JSON in the following format (all arrays are shown closed except the first, for easier viewing):
 
-![screen shot 2019-01-22 at 11 24 44 am](https://user-images.githubusercontent.com/38568909/51556800-61d71c00-1e38-11e9-992f-ab828e96064a.png)
+  <img width="1117" alt="screen shot 2019-01-01 at 7 14 23 pm" src="https://user-images.githubusercontent.com/39714935/50578640-ace1ae80-0df9-11e9-950d-c46b9fa9eab3.png">
 
   * Note: This endpoint does not require a token, nor authentication.
 
