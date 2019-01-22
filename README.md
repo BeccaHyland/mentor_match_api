@@ -103,6 +103,7 @@ POST `/api/v1/mentors`
             "ways_to_mentor": ["1-on-1", "coffee meetings"], <br>
             "expertise_tech": ["JavaScript", "Mocha/Chai", "Node.js", "React", "Redux"], <br>
             "expertise_non_tech": ["rock-climbing", "parenting", "cooking"], <br>
+            "avatar_url": "url of the avatar", <br>
             "meeting_location": ["remote"] <br>
 }<br>
 
@@ -197,6 +198,7 @@ See the following request updating a mentor, PATCH does not require all attribut
   "expertise_tech": ["JavaScript", "Mocha/Chai", "Node.js", "React", "Redux"], <br>
   "expertise_non_tech": ["rock-climbing", "parenting", "cooking"], <br>
   "identity_preference": ["parent", "female-identifying", "FE"], <br>
+  "avatar_url": "url of the avatar", <br>
   "meeting_location": ["remote"] <br>
   }<br>
 
