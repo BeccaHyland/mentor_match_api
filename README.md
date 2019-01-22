@@ -10,6 +10,8 @@
   Nearing graduation, students also contact alumni for short-term mentoring (mock interviews, coffee meetings) as a part of Turing's Professional Development curriculum. This app provides the ability to search for mentors in areas of particular interest.
 
   In this repo, you will find the code and documentation for the Mentor Match back end, which provides the database and API endpoints for the Mentor Match Project and is deployed at https://mentor-match-api.herokuapp.com/
+  
+  Mentor Match is also deployed to a staging environment to insulate the production site from bugs.
 
 ## Developers
 BE: Tim Fielder<br>
