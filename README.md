@@ -54,7 +54,7 @@ To supply the Front End app with data, this project provides the following endpo
 
   <img width="1117" alt="screen shot 2019-01-01 at 7 14 23 pm" src="https://user-images.githubusercontent.com/39714935/50578640-ace1ae80-0df9-11e9-950d-c46b9fa9eab3.png">
 
-  * Note: This endpoint does not require a token, nor authentication.
+  * Note: This is the only endpoint that does not require login or sending a token through the Authorization header.
 
 ### 2. One mentor by its id
 GET `/api/v1/mentors/(INSERT ID HERE)`
