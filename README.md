@@ -400,7 +400,7 @@ within the spec_helper RSpec configure:
 
 
 ## <a name="known-issues"></a>Known Issues
-An admin is unable to create a mentor in the database. A mentor must log in and create the user by filling out the mentor form.
+Admin cannot currently POST a new mentor. To POST, a prospective mentor logs in with GitHub, their Mentor Match User account is created through OAuth, and their mentor intake form data is then associated with that User. A future iteration could include a feature allowing an Admin to POST a new mentor independent of a User.
 
 ## Running Tests
 Run `rspec` from the CLI to run all tests.
