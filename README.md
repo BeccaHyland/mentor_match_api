@@ -21,7 +21,7 @@ Alex Rau
 
  ## Table of Contents
 * [Initial Setup](#initial-setup)
-* [Mentor Endpoints](#mentor-endpoints)
+* [Mentor Public Endpoints](#mentor-public-endpoints)
 * [Admin Endpoints](#admin-endpoints)
 * [Admin Mentor Endpoints](#admin-mentor-endpoints)
 * [Admin Student Endpoints](#admin-student-endpoints)
@@ -47,7 +47,7 @@ For authorization, all requests must include a parameter of `token`.
 ##### This ensures that the user already "Logged In" - was authenticated by a Github OAuth login and role-verified by the Back End to set the user's permissions (allowed endpoints)
 
 To supply the Front End app with data, this project provides the following endpoints:
-## <a name="mentor-endpoints"></a>Mentor Endpoints
+## <a name="mentor-public-endpoints"></a>Mentor Public Endpoints
 ### 1.  All mentors in the database:
   GET `/api/v1/mentors`
   * returns JSON in the following format (all arrays are shown closed except the first, for easier viewing):
