@@ -19,6 +19,8 @@ Rebecca Hyland, Project Lead<br>
 FE: Casey Hoepner<br>
 Alex Rau
 
+![mmpart1](https://user-images.githubusercontent.com/39714935/52218951-e8d4bd00-2858-11e9-9cd8-d151c99363a8.gif)
+
  ## Table of Contents
 * [Initial Setup](#initial-setup)
 * [Mentor Public Endpoints](#mentor-public-endpoints)
