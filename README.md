@@ -19,7 +19,11 @@ Rebecca Hyland, Project Lead<br>
 FE: Casey Hoepner<br>
 Alex Rau
 
+#### Screen Capture 1: Admin Logs In and Filters Mentors
 ![mmpart1](https://user-images.githubusercontent.com/39714935/52218951-e8d4bd00-2858-11e9-9cd8-d151c99363a8.gif)
+
+#### Screen Capture 2: Admin Matches and Unmatches Mentor with a Student, Capacity Updates
+![mmpart2matching](https://user-images.githubusercontent.com/39714935/52219403-ca22f600-2859-11e9-853f-59acecf40d65.gif)
 
  ## Table of Contents
 * [Initial Setup](#initial-setup)
