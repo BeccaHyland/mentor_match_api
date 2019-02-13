@@ -4,28 +4,12 @@
 
 # Mentor Match (API)
 
-## Introduction
-  Mentor Match is an app for internal staff and student use at Turing School of Software & Design. Incoming Turing students have the opportunity to be matched to a software development mentor, usually an alumni, and Iteration 1 of Mentor Match gives admin tools to manage the matching process.
-
-  Nearing graduation, students also contact alumni for short-term mentoring (mock interviews, coffee meetings) as a part of Turing's Professional Development curriculum. This app provides the ability to search for mentors in areas of particular interest.
-
-  In this repo, you will find the code and documentation for the Mentor Match back end, which provides the database and API endpoints for the Mentor Match Project and is deployed at https://mentor-match-api.herokuapp.com/
-  
-  Mentor Match is also deployed to a staging environment to insulate the production site from bugs.
-
 ## Developers
-BE: Tim Fielder<br>
-Rebecca Hyland, Project Lead<br>
-FE: Casey Hoepner<br>
-Alex Rau
-
-#### Screen Capture 1: Admin Logs In and Filters Mentors
-![mmpart1](https://user-images.githubusercontent.com/39714935/52218951-e8d4bd00-2858-11e9-9cd8-d151c99363a8.gif)
-
-#### Screen Capture 2: Admin Matches and Unmatches Mentor with a Student, Capacity Updates
-![mmpart2matching](https://user-images.githubusercontent.com/39714935/52219403-ca22f600-2859-11e9-853f-59acecf40d65.gif)
+Back End: ![Tim Fielder](https://github.com/tfielder), ![Rebecca Hyland](https://github.com/BeccaHyland) (Project Lead)<br>
+Front End: ![Casey Hoepner](https://github.com/caseyhoepner), ![Alex Rau](https://github.com/raualex)
 
  ## Table of Contents
+* [Introduction and Videos](#introduction)
 * [Initial Setup](#initial-setup)
 * [Mentor Public Endpoints](#mentor-public-endpoints)
 * [Admin Endpoints](#admin-endpoints)
@@ -35,6 +19,31 @@ Alex Rau
 * [Build Details](#build-details)
 * [Known Issues](#known-issues)
 * [Schema Design](#schema-design)
+
+## <a name="introduction"></a>Introduction
+  Mentor Match is an app for internal staff and student use at Turing School of Software & Design, planned in partnership with real clients. In this repo, you will find the code and documentation for the Back End, which provides the database and API endpoints for user by the Mentor Match front end and is deployed at https://mentor-match-api.herokuapp.com/ Mentor Match is also deployed to a staging environment to insulate the production site from bugs.
+  
+#### Iteration 1: Gives admin tools to manage the matching process in which incoming Turing students have the opportunity to be mentored 1-on-1 by a software development mentor, usually an alumni.
+  * Admin can filter current mentors and students by easy-to-use button attributes or a query string
+  * Admin can assign and remove matches
+  * New mentors can complete a detailed form to add their information to the mentor database
+  * Admin can enter new students into the database
+
+#### Iteration 2: Secures the app with an OAuth login (authentication) and differentiated access based on User role (authorization).
+* JSON web tokens (JWT) are generated, and a User is identified or created in the Back End after the User clicks "Login with GitHub" on the Front End
+* The Front End stores and sends the User's JWT with every API request to the Back End, where the User's identity and permissions are identified
+* A new Mentor that is created is associated with the User, for future editing of the User's own information
+
+#### Iteration 3 (in development): Gives students search functionality to locate additional mentors for short-term mentoring (coffee meetings, mock interviews) as a part of Turing's Professional Development curriculum.
+
+#### Screen Capture 1: Admin Logs In and Filters Mentors
+![mmpart1](https://user-images.githubusercontent.com/39714935/52218951-e8d4bd00-2858-11e9-9cd8-d151c99363a8.gif)
+
+#### Screen Capture 2: Admin Matches and Unmatches Mentor with a Student, Capacity Updates
+![mmpart2matching](https://user-images.githubusercontent.com/39714935/52219403-ca22f600-2859-11e9-853f-59acecf40d65.gif)
+
+#### Screen Capture 3: Mentor Completes & Submits Form
+![mmpart3mentorform](https://user-images.githubusercontent.com/39714935/52221642-d493be80-285e-11e9-869a-e4e5c2eaed67.gif)
 
 ## <a name="initial-setup"></a>Initial Setup
 Run locally:
